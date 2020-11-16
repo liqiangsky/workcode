@@ -1,0 +1,5 @@
+接口地址-----http://119.3.104.39:2302/swagger/index.html
+基准路径-----http://119.3.104.39:2302/api/
+账号18222694512
+密码888888
+C:\Users\liqiang\OneDrive\文档\WeChat Files\wxid_j4djnngvthcl21\FileStorage\File\2020-11

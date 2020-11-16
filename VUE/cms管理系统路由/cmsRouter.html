@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #app {
+            width: 700px;
+            border: 1px solid black;
+        }
+
+        header,
+        footer {
+            padding: 5px 0;
+            text-align: center;
+            background-color: #e3e3e3;
+        }
+        section{
+            display: flex;
+        }
+        .left {
+            width: 200px;
+            padding-left: 50px;
+            background-color: skyblue;
+        }
+
+        .left a {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h2>CMS 后台管理系统</h2>
+        </header>
+        <section>
+            <div class="left">
+                <ul>
+                    <li>
+                        <router-link to='/index'>首页</router-link>
+                    </li>
+                    <li>
+                        <router-link to='/product'>产品中心</router-link>
+                    </li>
+                    <li>
+                        <router-link to='/hardware'>智能硬件</router-link>
+                    </li>
+                    <li>
+                        <router-link to='/solution'>解决方案</router-link>
+                    </li>
+                    <li>
+                        <router-link to='/panter'>合作渠道</router-link>
+                    </li>
+                </ul>
+            </div>
+            <div class="right">
+                <router-view></router-view>
+            </div>
+        </section>
+        <footer>版权&copy;所有,请勿盗取！！盗亦有道！！</footer>
+
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script>
+        const index = {
+            template: `<div>index</div>`
+        };
+        const product = {
+            template: `<div>product</div>`
+        };
+        const hardware = {
+            template: `<div>hardware</div>`
+        };
+        const solution = {
+            template: `<div>solution</div>`
+        };
+        const panter = {
+            template: `<div>panter</div>`
+        }
+        const routes = [{
+                path: '/index',
+                component: index
+            },
+            {
+                path: '/product',
+                component: product
+            },
+            {
+                path: '/hardware',
+                component: hardware
+            },
+            {
+                path: '/solution',
+                component: solution
+            },
+            {
+                path: '/panter',
+                component: panter
+            },
+            {path:'/',redirect:'./index'}
+        ];
+        const router = new VueRouter({
+            routes
+        });
+        new Vue({
+            el: '#app',
+            router,
+        });
+    </script>
+</body>
+
+</html>

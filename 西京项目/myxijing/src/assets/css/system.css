@@ -1,0 +1,97 @@
+.system-pagination {
+  text-align: center;
+}
+
+.system-pagination .pagination {
+  margin: 0 auto;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.system-pagination .pagination .pagination-btn {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.system-pagination .pagination .el-button--text {
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  font-size: 14px !important;
+}
+
+.system-bj {
+  padding: 23px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.system-bj .accountPeriodSetting .el-drawer,
+.system-bj .communityMaintenance .el-drawer,
+.system-bj .deductionSetting .el-drawer {
+  width: 780px !important;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.system-bj .accountPeriodSetting .el-drawer .el-drawer__body .header,
+.system-bj .communityMaintenance .el-drawer .el-drawer__body .header,
+.system-bj .deductionSetting .el-drawer .el-drawer__body .header {
+  width: 100%;
+  color: #72767b;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.system-bj .accountPeriodSetting .el-form {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.system-bj .accountPeriodSetting .el-form .demo-drawer__footer {
+  margin-right: 0;
+}
+
+.system-bj .communityMaintenance .el-form-item__label {
+  width: 120px !important;
+}
+
+.system-bj .communityMaintenance .el-form-item__content {
+  width: 480px !important;
+  margin-left: 120px !important;
+}
+
+.system-bj .deductionSetting .demo-drawer__footer {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.system-bj .deductionSetting .el-form-item__label {
+  width: 120px !important;
+}
+
+.system-bj .deductionSetting .el-form-item__content {
+  width: 480px !important;
+  margin-left: 120px !important;
+}
+
+.system-title {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.el-table .cell {
+  text-align: center !important;
+}
+
+.el-table .cell .el-button--text {
+  padding: 0;
+}

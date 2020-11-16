@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="div" v-darg>ssssssssss</div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        Vue.directive('darg', {
+            inserted(el) {
+                var aw = window.innerWidth - el.clientWidth;
+                var ah = window.innerHeight - el.clientHeight;
+                el.style.position = "absolute";
+                el.onmousedown = function (event) {
+                    var X = event.clientX;
+                    var Y = event.clientY;
+                    console.log(X, Y);
+                    document.onmousemove = function (event) {
+                        var moveX = event.clientX - X;
+                        var moveY = event.clientY - Y;
+
+                        X = event.clientX;
+                        Y = event.clientY;
+
+
+
+
+
+                        var ml = el.offsetLeft + moveX;
+                        var mt = el.offsetTop + moveY;
+
+
+
+                        if (ml <= 0) {
+                            ml = 0;
+                        }else if(ml>=aw){
+                            ml = aw;
+                        }
+
+
+                        if (mt <= 0) {
+                            mt = 0;
+                        }else if(mt>=ah){
+                            mt = ah;
+                        }
+
+                        el.style.left = ml + "px";
+                        el.style.top = mt + "px";
+
+
+
+                    };
+                };
+                window.onmouseup = function () {
+                    document.onmousemove = null;
+                };
+                window.onresize = function () {
+                    aw = window.innerWidth - el.clientWidth;
+                    ah = window.innerHeight - el.clientHeight;
+                };
+            }
+        });
+
+
+        new Vue({
+            el: "#app",
+            data: {
+
+            }
+        });
+    </script>
+</body>
+
+</html>

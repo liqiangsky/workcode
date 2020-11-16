@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/music.css">
+</head>
+
+<body>
+    <div id="music">
+        <music></music>
+    </div>
+</body>
+<script src="./js/jquery-3.5.1.js"></script>
+<script src="./js/vue.js"></script>
+<script src="./js/axios.js"></script>
+<script>
+    axios.defaults.baseURL = "https://autumnfish.cn";
+    axios.interceptors.response.use(res => {
+        return res.data;
+    });
+    const musichd = {
+        data() {
+            return {
+                keyword: ''
+            }
+        },
+        template: `<div class='music-hd'>
+            <div class='name'>
+                 <h3>Music...</h3>
+            </div>
+            <div class='search'>
+                <input class='search-ipt' type='text' v-model.lazy='keyword' placeholder='Enter....' @keyup.enter='$emit("search",keyword)' />    
+                <img class='zoom' src='./images/zoom.png' @click='$emit("search",keyword)'/>
+            </div>
+        </div>`,
+        methods: {
+            ss() {
+                console.log(111111111111111111111)
+            }
+        }
+    };
+    const musicbd = {
+        props: ['musics', 'songImg', 'songHots','name','songname'],
+        template: `<div class='music-bd'>
+                        <section class='bd-lists'>
+                            <ul>
+                                <li class='bd-music' v-for='item in musics'><a class='bd-a' @dblclick='$emit("play",item.id)'>{{ item.name }}</a></li>
+                            </ul>  
+                        </section>
+                        <section class='bd-home'>
+                            <div class='home-player'>
+                                <div class='player-disc'>
+                                    <img class='songsImg' :src='songImg'/>
+                                    <img class='disc' src='./images/disc.png'/>
+                                </div>
+                            </div>
+                            <img class='player-bar' src='./images/player_bar.png'/>
+                            {{ name }}
+                            {{ songname }}
+                        </section>
+                        <section class='bd-hot'>
+                            <p><strong>热门留言</strong></p>
+                            <ul>
+                                <li class='hot-list' v-for='item in songHots'>
+                                    <img class='userimg' :src='item.user.avatarUrl'/>
+                                    <div class=userinfo>
+                                        <p class=nickname>{{ item.user.nickname }}</p>
+                                        <span class='content'>{{ item.content }}</span>
+                                    </div>    
+                                </li>    
+                            </ul>
+                        </section>
+                </div>`
+    }
+    const musicft = {
+        props: ['songUrl'],
+        template: `<div class='music-ft'>
+                <audio class='ft-audio' :src='songUrl' controls autoplay @click='player' @playing='player' @pause='paused'></audio>
+            </div>`,
+        methods: {
+            player() {
+                $(".player-bar").addClass("playing").removeClass("paused");
+                $(".home-player").addClass("home");
+            },
+            paused() {
+                $(".player-bar").addClass("paused").removeClass("playing");
+                $(".home-player").removeClass("home");
+            }
+        }
+    }
+    Vue.component('music', {
+        data() {
+            return {
+                musics: '',
+                songUrl: '',
+                songImg: '',
+                songHots: '',
+                name:'',
+                songname:''
+                // userImg: '',
+                // userNickname: '',
+                // userContent: ''
+            }
+        },
+        template: `<div class='music'>
+                <musichd @search='search'></musichd>
+                <musicbd :musics='musics' @play='play' :songImg='songImg' :songname='songname' :name='name' :songHots='songHots'></musicbd>
+                <musicft :songUrl='songUrl'></musicft>
+            </div>`,
+        components: {
+            musichd,
+            musicbd,
+            musicft,
+        },
+        methods: {
+            async search(keywords) {
+                $("input")[0].value = '';
+                const musicList = await axios.get('/search?keywords=' + keywords);
+                console.log(musicList)
+                if (musicList.code == 200) {
+                    this.musics = musicList.result.songs;
+                }
+            },
+            async play(songid) {
+                const songurl = await axios.get('/song/url?id=' + songid);
+                console.log(songurl)
+                if (songurl.code == 200) {
+                    this.songUrl = songurl.data[0].url;
+                }
+                const songimg = await axios.get('/song/detail?ids=' + songid);
+                if (songimg.code == 200) {
+                   this.name = songimg.songs[0].name;
+                   this.songname = songimg.songs[0].al.name;
+                    this.songImg = songimg.songs[0].al.picUrl;
+                }
+                const songhot = await axios.get('/comment/hot?type=0&id=' + songid);
+                console.log(songhot.hotComments)
+                if (songhot.code == 200) {
+                    const songhots = songhot.hotComments;
+                    this.songHots = songhots;
+                }
+                // this.userImg = songhots.user.avatarUrl;
+                // console.log(this.userImg)
+                // this.userNickname =
+                //     this.userContent =
+            }
+
+        }
+    });
+    new Vue({
+        el: '#music',
+    });
+</script>
+
+</html>

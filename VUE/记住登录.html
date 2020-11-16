@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+用户名：<input type="text" id="username">
+<br>
+密码：<input type="password" id="password">
+<br>
+<input type="checkbox" id="checkbox">记住我
+<br>
+<button id="btn">登录</button>
+
+<body>
+    <script>
+        (function () {
+            var data = [];
+            var btn = document.getElementById("btn");
+            var username =document.getElementById("username");
+            var password = document.getElementById("password");
+            var checkbox =document.getElementById("checkbox");
+            if (localStorage.msg) {
+                data = JSON.parse(localStorage.msg);
+                username.value = data[data.length-1].username;
+                password.value = data[data.length-1].password;
+                checkbox.checked = true;
+            }
+            btn.onclick = function () {
+                localStorage.msg = "";
+                username =username.value;
+                password = password.value;
+                if (checkbox.checked) {
+                    var obj = {
+                        "username": username,
+                        "password": password
+                    }
+                    data.push(obj);
+                    localStorage.msg = JSON.stringify(data);
+                    console.log(data)
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

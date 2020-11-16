@@ -1,0 +1,18 @@
+<!--pages/order/order.wxml-->
+<view class="orderok">
+  <view class="orderokinfos" wx:key="id" wx:for="{{orderInfo}}" wx:for-item="orderinfo">
+    <view class="orderok-info-item">
+      <image class="orderok-info-item-img" src="{{url}}{{orderinfo.img}}"></image>
+      <view class="orderinfo">
+        <view class="orderinfo-item-name">{{orderinfo.title}}</view>
+        <view class="orderinfo-item-time">{{orderinfo.ordertime}}</view>
+        <view class="orderinfo-item-more">共计{{orderinfo.num}}件商品</view>
+      </view>
+      <view class="isok">
+        <view class="isok-ok">订单已送达</view>
+        <view class="isok-item-total">￥{{orderinfo.price*orderinfo.num}}</view>
+      </view>
+    </view>
+    <button class="again" plain size="mini">再来一单</button>
+  </view>
+</view>

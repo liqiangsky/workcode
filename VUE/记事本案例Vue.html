@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #jsb input {
+            width: 200px;
+            padding: 5px 5px;
+            outline: none;
+            border: orange 1px solid;
+        }
+
+        .fot {
+            width: 200px;
+            padding: 5px 5px;
+            display: flex;
+            justify-content: space-between;
+            border: orange 1px solid;
+            border-top: none;
+        }
+
+        li.on {
+            width: 200px;
+            padding: 5px 5px;
+            display: flex;
+            justify-content: space-between;
+            border: orange 1px solid;
+            border-top: none;
+        }
+
+        li.on .id {
+            margin-right: 5px;
+        }
+
+        .clear {
+            cursor: pointer;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+
+        .times {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="jsb" v-cloak>
+        <h1>我的记事本</h1>
+        <div class="jsb">
+            <!-- 绑定键盘按键事件.enter 双向绑定v-model将新任务数据实时传递到data中的总任务数组-->
+            <input type="text" placeholder="请输入任务" autofocus v-model="newrw" @keyup.enter="add">
+            <ul>
+                <!-- v-for循环(itme,index)itme为遍历数组中的每一项的值，index为每一项在总任务数组中的索引 -->
+                <li class="on" v-for="(item,index) in rw">{{ index+1 }} {{ item }}
+                    <span class="times" @click="delthis(index)">&times;</span></li>
+            </ul>
+            <div class="fot">
+                <span><em>{{ rw.length }}</em> 个任务</span>
+                <p class="clear" @click="delall">clear</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#jsb",
+            data: {
+                //新输入的任务数据string
+                newrw: "",
+                //存储总任务的数组
+                rw: []
+            },
+            methods: {
+                add() {
+                    // console.log(this.newrw);
+                    // console.log(this.rw);
+                    //先判断内容是否为空
+                    if (this.newrw === "") {
+                        alert("内容不能为空！");
+                    } else {
+                        //将新的任务追加到总任务数组的末尾push()
+                        this.rw.push(this.newrw);
+                        //让输入框的内容重置，提高效率
+                        this.newrw = "";
+                    }
+                },
+                delall() {
+                    //将总任务数组的数据清空
+                    this.rw = [];
+                    // console.log(this.rw)
+                },
+                delthis(index) {
+                    // console.log(index);
+                    //将当前要删除的任务从总任务数组中去除splice(要删除的索引,删除几个)
+                    this.rw.splice(index, 1);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

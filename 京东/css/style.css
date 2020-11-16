@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e3e3e3;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.hd {
+  width: 100%;
+  background: white;
+}
+
+.hd-conter {
+  width: 1190px;
+  height: 140px;
+  background: white;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hd-conter .logo {
+  width: 190px;
+  height: 120px;
+  background: url(../images/icon-logo.png) no-repeat;
+  background-position: 0 0;
+}
+
+.hd-conter .conter {
+  width: 800px;
+  height: 120px;
+  padding-top: 10px;
+  position: relative;
+}
+
+.hd-conter .conter .cart {
+  width: 130px;
+  height: 37px;
+  border: 1px solid #e3e3e3;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  right: 30px;
+}
+
+.hd-conter .conter .cart:hover {
+  border: 1px solid red;
+}
+
+.hd-conter .conter .cart-div {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: red;
+}
+
+.hd-conter .conter .cart-div i {
+  display: block;
+}
+
+.hd-conter .conter .cart-div a {
+  color: red;
+  font-size: 12px;
+  display: block;
+}
+
+.hd-conter .conter .search {
+  width: 550px;
+  height: 80px;
+  margin-left: 60px;
+}
+
+.hd-conter .conter .search .form {
+  width: 546px;
+  height: 36px;
+  border: 2px solid red;
+  position: relative;
+}
+
+.hd-conter .conter .search .form a {
+  position: absolute;
+  display: block;
+  right: 80px;
+  top: 6px;
+  color: #bebebe;
+}
+
+.hd-conter .conter .search .form .ipt {
+  width: 425px;
+  height: 30.5px;
+  padding: 2px 44px 2px 17px;
+  border: 1px solid red;
+  outline: none;
+}
+
+.hd-conter .conter .search .form .btn {
+  width: 58px;
+  height: 37px;
+  border: 1px solid red;
+  position: absolute;
+  background: red;
+  cursor: pointer;
+  outline: none;
+}
+
+.hd-conter .conter .search .form .btn i {
+  font-size: 25px;
+  color: white;
+}
+
+.hd-conter .conter .search ul {
+  width: 550px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 5px;
+}
+
+.hd-conter .conter .search ul li {
+  line-height: 20px;
+}
+
+.hd-conter .conter .search ul li:first-child a {
+  color: red;
+}
+
+.hd-conter .conter .search ul li:hover a {
+  color: red;
+}
+
+.hd-conter .conter .search ul a {
+  display: block;
+  color: #aaaaaa;
+}
+
+.hd-conter .conter .dh {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+
+.hd-conter .conter .dh ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.hd-conter .conter .dh ul a {
+  color: black;
+}
+
+.hd-conter .conter .dh ul li {
+  font-size: 15px;
+}
+
+.hd-conter .conter .dh ul li:hover a {
+  color: red;
+}
+
+.hd-conter .conter .dh ul li a {
+  display: block;
+}
+
+.hd-conter .conter .dh ul li:nth-child(1) a {
+  color: red;
+  font-weight: bold;
+}
+
+.hd-conter .conter .dh ul li:nth-child(2) a {
+  color: red;
+  font-weight: bold;
+}
+
+.hd-conter .ad {
+  width: 190px;
+  height: 120px;
+  background: url(../images/ad.jpg) no-repeat;
+  background-position: 0 0;
+}
+
+#lbdiv {
+  width: 590px;
+  height: 470px;
+  margin: 100px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#lbdiv .left,
+#lbdiv .right {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  margin-top: -10px;
+  top: 50%;
+  cursor: pointer;
+}
+
+#lbdiv .left:hover,
+#lbdiv .right:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#lbdiv .left {
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  left: -10px;
+}
+
+#lbdiv .left i {
+  left: 15px;
+}
+
+#lbdiv .right {
+  right: -10px;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
+}
+
+#lbdiv .right i {
+  right: 15px;
+}
+
+#lbdiv i {
+  color: #e6e6e6;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  top: 12px;
+}
+
+.lbimg {
+  width: 590px;
+  height: 470px;
+  position: relative;
+  list-style: none;
+}
+
+.lbimg .on {
+  display: block;
+}
+
+.lbimg li {
+  position: absolute;
+  display: none;
+}
+
+.lbimg li:nth-child(1) {
+  display: block;
+}
+
+.lbimg img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.lbli {
+  list-style: none;
+  text-align: center;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.lbli li {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid transparent;
+  background-clip: content-box;
+  border-radius: 100%;
+  float: left;
+}
+
+.lbli .on {
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: opacity 300ms ease-in-out 0s;
+  opacity: 1;
+  z-index: 1;
+}

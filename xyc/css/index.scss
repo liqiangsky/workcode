@@ -1,0 +1,440 @@
+//首页轮播开始
+#swiper-container {
+    width: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .banner-ul {
+        width: 6.25rem
+            /* 100/16 */
+        ;
+        height: .125rem
+            /* 2/16 */
+        ;
+        list-style: none;
+        z-index: 1000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 93% auto;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            border-radius: .1875rem
+                /* 3/16 */
+            ;
+            float: left;
+            width: 1.25rem
+                /* 20/16 */
+            ;
+            line-height: .375rem
+                /* 6/16 */
+            ;
+            background: rgba(0, 0, 0, .3);
+            overflow: hidden;
+
+            div {
+                height: 100%
+                    /* 6/16 */
+                ;
+                width: 0;
+                border-radius: .1875rem;
+                background: white;
+            }
+        }
+
+    }
+
+    .carousel-caption {
+        bottom: 1rem;
+
+        .underline {
+            width: 121.5%;
+            height: .0625rem
+                /* 1/16 */
+            ;
+            background: white;
+        }
+    }
+}
+
+//首页轮播结束
+
+
+// ------------------------------------------
+
+
+//首页中间导航开始
+#navigation-bar {
+    .row {
+        padding-left: 0.4rem;
+        padding-right: 0.4rem;
+
+        .col-xs-3 {
+            width: 25%;
+            padding: 0 .3125rem
+                /* 5/16 */
+            ;
+
+            h4 {
+                font-family: 宋体;
+                font-weight: bold;
+                font-size: 0.4rem;
+            }
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+    img {
+        width: 80%;
+        margin-top: 1rem;
+    }
+}
+
+//首页中间导航结束
+
+
+// ------------------------------------------
+
+
+
+//首页星云餐介绍开始
+#xingyuncan-Introduction {
+    div {
+        line-height: 0.7rem;
+        color: #9c9c9c;
+        font-size: .375rem
+            /* 6/16 */
+        ;
+    }
+
+    img {
+        width: 100%;
+        margin-bottom: 0.3rem;
+    }
+}
+
+//首页星云餐介绍结束
+
+
+
+// ------------------------------------------
+
+
+//系统优势开始
+#System-advantages {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            width: 50%;
+            float: left;
+            margin-bottom: .625rem
+                /* 10/16 */
+            ;
+
+            p {
+                color: #999;
+                margin: 0 auto;
+                width: 85%;
+                text-align: center;
+                font-size: .35rem
+                    /* 6/16 */
+                ;
+                line-height: 0.6rem;
+            }
+
+            h3 {
+                margin: .25rem
+                    /* 4/16 */
+                    0;
+                font-size: .4375rem
+                    /* 7/16 */
+                ;
+                font-weight: bold;
+            }
+
+            .box-img {
+                height: 40%;
+                display: flex;
+                justify-content: space-around;
+                margin: 0 auto;
+                align-items: center;
+
+                img {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+//系统优势结束
+
+
+// ------------------------------------------
+
+
+//合作伙伴开始
+#Cooperation-partner {
+    .container-fluid {
+        .container-fluid {
+            padding: 0;
+            table {
+                width: 100%;
+                border: .0625rem
+                    /* 1/16 */
+                    solid #e3e3e3;
+                border-radius: .3125rem
+                    /* 5/16 */
+                ;
+                border-collapse: separate;
+                overflow: hidden;
+
+                tr {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                td {
+                    width: 50%;
+                    height: 2.5rem
+                        /* 40/16 */
+                    ;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    border-bottom: .0625rem
+                        /* 1/16 */
+                        solid #e3e3e3;
+
+                    &:nth-child(9),
+                    &:nth-child(10) {
+                        border-bottom: none;
+                    }
+
+                    &:nth-child(odd) {
+                        border-right: .0625rem
+                            /* 1/16 */
+                            solid #e3e3e3;
+                    }
+
+                    img {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//合作伙伴结束
+
+
+
+
+
+// ------------------------------------------
+
+
+//联系我们开始
+#Contact-Us {
+
+    .ly,
+    .dh {
+        padding: 0;
+    }
+
+    background: white;
+    bottom: 5%;
+    z-index: 88;
+    position: fixed;
+    width: 70%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    border-radius:.9375rem
+    /* 15/16 */
+    ;
+    box-shadow: .125rem
+    /* 2/16 */
+    .125rem
+    /* 2/16 */
+    .5rem
+    /* 8/16 */
+    rgba(#b9b9b9, .5);
+    font-weight: bold;
+    // overflow: hidden;
+
+    .online-message,
+    .contact-number {
+        float: left;
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: .375rem
+            /* 6/16 */
+        ;
+        line-height: 3;
+    }
+
+    .online-message {
+        padding-left: .625rem
+            /* 10/16 */
+        ;
+        padding-right: .3125rem
+            /* 5/16 */
+        ;
+        border-right: .0625rem
+            /* 1/16 */
+            solid #e3e3e3;
+    }
+
+    .contact-number {
+        padding-left: .3125rem
+            /* 5/16 */
+        ;
+        padding-right: .625rem
+            /* 10/16 */
+        ;
+    }
+
+    img {
+        width: 20%;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-fluid {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .3);
+        z-index: 999;
+
+        .message {
+            border-radius: .1875rem
+                /* 3/16 */
+            ;
+            width: 85%;
+            position: relative;
+            background: white;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            h2 {
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                margin: .75rem
+                    /* 12/16 */
+                ;
+            }
+
+            h3 {
+                width: 100%;
+                border-top-left-radius: .1875rem;
+                border-top-right-radius: .1875rem;
+                font-size: .5rem
+                    /* 8/16 */
+                ;
+                line-height: 2.5;
+                font-weight: bold;
+                background-color: #e3e3e3;
+                margin: 0;
+                margin-bottom: .125rem
+                    /* 2/16 */
+                ;
+            }
+
+            i {
+                position: absolute;
+                right: .5rem
+                    /* 8/16 */
+                ;
+                top: .375rem
+                    /* 6/16 */
+                ;
+                font-size: .25rem
+                    /* 4/16 */
+                ;
+            }
+
+            .name,
+            .phone,
+            .company,
+            .msg {
+                line-height: 1.5;
+
+                border: .0625rem
+                    /* 1/16 */
+                    solid #e3e3e3;
+                border-radius: .1875rem
+                    /* 3/16 */
+                ;
+                width: 90%;
+                margin: .125rem
+                    /* 2/16 */
+                    0;
+
+                &::placeholder {
+                    color: #d1d1d1;
+                    font-size: .375rem
+                        /* 6/16 */
+                    ;
+                    font-weight: normal;
+                }
+
+                padding:.25rem
+                /* 4/16 */
+                0.5rem;
+            }
+
+            .tip {
+                font-size: .25rem
+                    /* 4/16 */
+                ;
+            }
+
+            .ipt {
+                width: 90%;
+                color: #dfdfdf;
+                background: #274479;
+                margin-bottom: .25rem
+                    /* 4/16 */
+                ;
+            }
+
+            .btn {
+                border: none;
+            }
+        }
+    }
+}
+
+//联系我们结束

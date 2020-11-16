@@ -1,0 +1,54 @@
+//header开始
+#header {
+    background: white;
+    color: black;
+
+    a {
+        color: black;
+    }
+
+    .right {
+        color: #214280;
+    }
+
+    border-bottom: .0625rem
+    /* 1/16 */
+    solid #e3e3e3;
+}
+
+//header结束
+
+#about,#Company-Qualification {
+    img {
+        width: 100%;
+    }
+
+}
+// 公司介绍开始
+#Company-Introduction {
+    .zhengwen {
+
+        h4,
+        p {
+            font-size: .375rem
+                /* 6/16 */
+            ;
+            line-height: 2;
+            color: rgb(129, 129, 129);
+            margin: 0;
+        }
+
+        h4 {
+            color: black;
+        }
+
+    }
+}
+// 公司介绍结束
+// 公司软著开始
+#Company-Qualification{
+    .img{
+        padding: 0;
+    }
+}
+// 公司软著结束

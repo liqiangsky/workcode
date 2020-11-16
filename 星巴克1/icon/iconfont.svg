@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="angle-right" unicode="&#59470;" d="M610.88 384L192 802.88 285.12 896l512-512-512-512L192-34.88z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="all" unicode="&#59366;" d="M85.312 810.688V512H384V810.688H85.312zM0 896h469.312v-469.312H0V896z m0-554.688h469.312V-128H0V341.312zM85.312 256v-298.688H384V256H85.312zM554.688 896H1024v-469.312H554.688V896zM640 810.688V512h298.688V810.688H640zM554.688 341.312H1024V-128H554.688V341.312zM640 256v-298.688h298.688V256H640z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="times" unicode="&#59434;" d="M960 741.76L869.76 832 512 474.24 154.24 832 64 741.76 421.76 384 64 26.24 154.24-64 512 293.76 869.76-64 960 26.24 602.24 384z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="menu" unicode="&#59499;" d="M64 832h896v-128H64V832z m0-768h896v-128H64v128z m0 384h896v-128H64V448z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

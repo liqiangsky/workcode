@@ -1,0 +1,25 @@
+<!--pages/orderinfo/orderinfo.wxml-->
+<!-- 配送地址 -->
+<view class="message">
+  <view class="selectedLocal">订单送至：<button class="loacltion" size="mini" bindtap="chooseAddress">选择配送地址</button></view>
+  <view class="city">省/市/区：{{city}}</view>
+  <view class="address">详细地址：{{address}}</view>
+  <view class="postcode">邮编：{{postalCode}}</view>
+  <view class="phone">联系电话：{{telNumber}}</view>
+</view>
+<!-- 已选商品信息 -->
+<view class="productinfo">
+  <view class="productinfo-title">购买商品</view>
+  <view class="productinfo-item-container" wx:key="id" wx:for="{{orderinfo}}" wx:for-item="orderinfoitem">
+    <view class="orderinfo-item">
+      <image class="orderinfo-img" src="{{url}}{{orderinfoitem.img}}"></image>
+      <view class="orderinfo-name">{{orderinfoitem.title}}</view>
+      <view class="orderinfo-config">
+        <view class="orderinfo-num">X{{orderinfoitem.num}}</view>
+        <view class="orderinfo-price">￥{{orderinfoitem.price}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 提交订单 -->
+<button class="submit" bindtap="submit">￥{{totle}} 购买</button>

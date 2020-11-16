@@ -1,0 +1,66 @@
+/* pages/order/order.wxss */
+page {
+  background-color: #e3e3e3;
+}
+
+.orderokinfos {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #b6b6b6;
+  position: relative;
+  padding: 0 20rpx;
+  padding-bottom: 80rpx;
+  background-color: #fff;
+}
+
+.orderok {
+  width: 710rpx;
+  margin: 20rpx;
+}
+
+.orderok-info-item {
+  padding: 40rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderok-info-item-img {
+  width: 200rpx;
+  height: 140rpx;
+  margin-right: 15rpx;
+}
+
+.orderinfo {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+.orderinfo-item-name {
+  font-size: 16px;
+}
+
+.orderinfo-item-time {
+  font-size: 12px;
+  color: #929292;
+}
+
+.orderinfo-item-more {
+  font-size: 12px;
+}
+
+.isok {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+
+
+.again {
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+  color: #6e6e6e !important;
+  border-color: #979797 !important;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="app">
+    <table>
+        <tr v-for="item in students">
+            <td>id：{{ item.id }}</td>
+            <td>姓名：{{ item.name }}</td>
+            <td>年龄：{{ item.age }}</td>
+            <td>
+                <a href="javascript:;" @click="search(item.id)">查找索引</a>
+            </td>
+        </tr>
+    </table>
+    <span>当前对应的索引为：{{ index }}</span>
+</div>
+
+<body>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                index:'',
+                students: [{
+                        "id": 01,
+                        "name": "kk",
+                        "age": 18
+                    },
+                    {
+                        "id": 02,
+                        "name": "jj",
+                        "age": 17
+                    },
+                    {
+                        "id": 03,
+                        "name": "ak",
+                        "age": 38
+                    },
+                    {
+                        "id": 04,
+                        "name": "kj",
+                        "age": 15
+                    }
+                ]
+            },
+            methods: {
+                search(id){
+                    let index = this.students.findIndex(function(a){
+                       return a.id == id;
+                    });
+                    this.index = index;
+                }
+            },
+            // monted: {
+
+            // }
+        });
+    </script>
+</body>
+
+</html>

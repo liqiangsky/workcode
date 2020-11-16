@@ -1,0 +1,300 @@
+@charset "UTF-8";
+/* 全局修改elemeng-ui组件样式 */
+/* 全局input高度 */
+.el-input__inner {
+  height: 42px;
+}
+
+/* 全局面板里文字大小颜色 */
+.el-card {
+  color: #333333;
+  font-size: 16px;
+  font-family: Microsoft YaHei;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 全局设置列表表头颜色 */
+.el-table th {
+  background: #F5F7FA;
+}
+
+/* 全局列表操作里按钮 */
+.el-button--mini,
+.el-button--mini.is-round {
+  padding: 0px;
+}
+
+/* 全局列表操作里文字的颜色 */
+.el-button--text {
+  color: #409EFF;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+/* 全局列表中文字颜色字重 */
+.el-table {
+  font-size: 16px;
+}
+
+.el-table th > .cell {
+  font-weight: 400 !important;
+  color: #333333;
+  font-size: 16px;
+}
+
+/* 全局查询条件表单前的文字 */
+.el-form-item__label {
+  color: #333333 !important;
+  font-size: 16px;
+}
+
+/* 设置对话框居中 */
+.el-dialog {
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: calc(100% - 200px);
+  max-width: calc(100% - 30px);
+  /* 对话框身体 */
+}
+.el-dialog .el-dialog__body {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 40px;
+}
+
+/* 抽屉样式------------- ↓ */
+/* 焦点为0 */
+:focus {
+  outline: 0;
+}
+
+/* 抽屉下的表单宽度 */
+.el-drawer .el-form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+/**********************************
+
+/* 抽屉下的按钮样式 */
+.el-drawer .el-button {
+  width: 80px;
+  height: 36px;
+}
+
+/* 抽屉下的保存按钮 */
+.el-drawer .drawer-btn-submit {
+  background-color: #409EFF;
+  border: 1px solid #409EFF;
+  color: white;
+  font-size: 16px;
+  margin-right: 36px;
+}
+
+/* 抽屉里按钮的上边距 */
+.demo-drawer__footer {
+  width: 80%;
+  height: 45px;
+  margin: 0 auto;
+  margin-top: 35px;
+  display: flex;
+  padding-right: 13px;
+  justify-content: flex-end;
+}
+/*************************************/
+
+
+/* 面包屑 */
+.el-breadcrumb {
+  margin-bottom: 15px;
+}
+
+/* 面包屑文字大小和颜色 */
+.el-breadcrumb__inner {
+  font-size: 16px !important;
+  color: #333333 !important;
+  font-weight: 500 !important;
+}
+
+/* 下拉框 */
+.el-select {
+  display: block;
+}
+
+/* 列表复选框颜色 */
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background-color: #0E7DE6;
+  border-color: #0E7DE6;
+}
+
+/* 查询条件后面的按钮 */
+.query-btns {
+  margin-bottom: 22px;
+}
+
+/* 分页 */
+.el-pagination {
+  margin-top: 15px;
+}
+
+.el-pagination__total {
+  margin-left: 20px;
+}
+
+/* 自定义按钮颜色------------- ↓ */
+/* 查询条件-查询 */
+.btn-query {
+  color: #606266 !important;
+  background: white !important;
+  font-size: 16px !important;
+}
+
+/* 查询条件-新增 */
+.btn-add {
+  background: #409EFF;
+  border: 1px solid #409EFF;
+  color: white;
+  font-size: 16px;
+}
+
+/* 查询条件-批量删除 */
+.btn-del2 {
+  background: #F56C6C;
+  border: 1px solid #F56C6C;
+  color: white;
+  font-size: 16px;
+}
+
+/* 查询条件-导出 */
+.btn-export {
+  background: #DEF1FF;
+  border: 1px solid #598EB6;
+  color: #598EB6;
+  font-size: 16px;
+}
+
+/* 列表-编辑 */
+.btn-edit {
+  background: #00B19D;
+  border: 1px solid #00B19D;
+  color: white;
+  padding: 7px;
+  font-size: 16px;
+}
+
+/* 列表-删除 */
+.btn-del {
+  background: #F56C6C;
+  border: 1px solid #F56C6C;
+  color: white;
+  padding: 7px;
+  font-size: 16px;
+}
+
+/* 列表-查看详情 */
+.btn-look {
+  background: #909399;
+  border: 1px solid #909399;
+  color: white;
+  padding: 7px;
+  font-size: 16px;
+}
+
+/* 确定或保存或提交 */
+.btn-submit {
+  background: #409EFF;
+  border: 1px solid #409EFF;
+  color: white;
+  padding: 7px;
+  font-size: 16px;
+}
+
+/* 重置 */
+.btn-reset {
+  background: #e6a23c;
+  border: 1px solid #e6a23c;
+  color: white;
+  font-size: 16px;
+}
+
+/* 取消 */
+.btn-cancel {
+  color: #606266 !important;
+  font-weight: Regular;
+  padding: 7px;
+  font-size: 16px;
+}
+
+/* 按钮的hover------------- ↓*/
+/* 查询条件-新增 */
+.btn-add:hover {
+  background-color: #66b1ff !important;
+  color: white;
+}
+
+/* 查询条件-批量删除 */
+.btn-del2:hover {
+  background-color: #f78989 !important;
+  color: white;
+}
+
+/* 查询条件-导出 */
+.btn-export:hover {
+  background: #e4f1fa;
+  border: 1px solid #598EB6;
+  color: #598EB6;
+}
+
+/* 列表-编辑 */
+.btn-edit:hover {
+  background-color: #08c5af !important;
+  color: white;
+}
+
+/* 列表-删除 */
+.btn-del:hover {
+  background: #f58585;
+  border: 1px solid #F56C6C;
+  color: white;
+  padding: 7px;
+}
+
+/* 列表-查看详情 */
+.btn-look:hover {
+  background: #a6a9af;
+  border: 1px solid #909399;
+  color: white;
+  padding: 7px;
+}
+
+/* 重置 */
+.btn-reset:hover {
+  background-color: #ebb563 !important;
+  color: white;
+}
+
+/* 取消 */
+.btn-cancel:hover {
+  color: #606266 !important;
+  font-weight: Regular;
+}
+
+/* 确定或保存或提交 */
+.btn-submit:hover {
+  background-color: #ecf5ff !important;
+  color: #66b1ff;
+}
+
+/* 抽屉里的保存按钮 */
+.drawer-btn-submit:hover {
+  background-color: #66b1ff !important;
+  color: white;
+}
+
+/*# sourceMappingURL=global.css.map */

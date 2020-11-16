@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+
+        .div {
+            width: 100px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            cursor: pointer;
+        }
+
+        .p {
+            border-bottom: 1px solid black;
+        }
+
+        .on {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="div" tabindex="1" @keyup.down="down" @keyup.up="up">
+            <p class="p">{{ selectedCity }}</p>
+            <p v-for="(city,index) in citys" :class="{on:index == isIndex}">{{ city }}</p>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isIndex: 0,
+                selectedCity: '北京',
+                citys: ['北京', '重庆', '厦门', '成都', '沧州']
+            },
+            methods: {
+                up() {
+                    this.isIndex = this.isIndex-- <= 0 ? this.isIndex = this.citys.length - 1 : this.isIndex;
+                    this.selectedCity = this.citys[this.isIndex];
+                },
+                down() {
+                    console.log("downdowndown");
+                    this.isIndex = this.isIndex++ >= this.citys.length - 1 ? this.isIndex = 0 : this.isIndex;
+                    this.selectedCity = this.citys[this.isIndex];
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

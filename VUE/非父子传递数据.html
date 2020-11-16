@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <first></first>
+        <last></last>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const Bus = new Vue();
+        Vue.component('first', {
+            template: `<button @click='handle'>first</button>`,
+            data() {
+                return {
+                    msg: '我是first的数据'
+                }
+            },
+            methods: {
+                handle() {
+                    Bus.$emit('change', this.msg)
+                }
+            }
+        })
+        Vue.component('last', {
+            template: `<div><h1>{{msg}}</h1></div>`,
+            data() {
+                return {
+                    msg: ''
+                }
+            },
+            mounted() {
+                Bus.$on('change', (val) => {
+                    this.msg = val
+                })
+            }
+        })
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</body>
+
+</html>

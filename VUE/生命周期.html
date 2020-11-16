@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>{{ msg }}</div>
+        <button @click="change1">数据1</button>
+        <button @click="change2">数据2</button>
+        <button @click="destroy">销毁</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                msg:'更新前数据。。。'
+            },
+            methods:{
+                change1(){
+                    this.msg = "更新后数据11111.。。。"
+                },
+                change2(){
+                    this.msg = "更新后数据22222.。。。"
+                },
+                destroy(){
+                    this.$destroy();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

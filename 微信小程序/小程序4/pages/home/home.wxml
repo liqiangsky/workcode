@@ -1,0 +1,46 @@
+<!--pages/home/home.wxml-->
+<!-- 头部 -->
+<view class="header">
+  <image src="../../images/logo.png"></image>
+  <view class="header-title">
+    <view class="header-name">订餐</view>
+    <view class="header-config">起送 ￥20 | 配送 ￥5 | 送达 30分钟</view>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view class="products" style="height:{{height}}px">
+  <!-- 商品类型 -->
+  <view class="product-type">
+    <view class="product-type-item" bindtap="jump" data-id="type{{productType.id}}" wx:key="productType" wx:for="{{products}}" wx:for-item="productType">
+      {{productType.text}}</view>
+  </view>
+  <!-- 商品详情列表 -->
+  <scroll-view class="product-list" scroll-y scroll-into-view="{{local}}">
+    <view class="product-list-items">
+      <view class="product-list-item" id="type{{productList.id}}" wx:for="{{products}}" wx:key="id" wx:key="productList" wx:for-item="productList">
+        <!-- 商品名称 -->
+        <view class="product-name">{{productList.text}}</view>
+        <!-- 商品详情信息 -->
+        <view class="item" wx:key="id" wx:for="{{productList.data}}">
+          <image class="item-img" src="{{url}}{{item.img}}"></image>
+          <view class="item-config">
+            <view class="item-title">{{item.title}}</view>
+            <view class="item-sales">已售{{item.sales}}份</view>
+            <view class="item-price">￥{{item.price}}</view>
+          </view>
+          <view class="item-count">
+            <button plain wx:if="{{item.num != 0}}" bindtap="changNum" data-item="{{item}}" data-itemlist="{{productList}}"
+              data-operand="{{-1}}">-</button>
+            <view wx:if="{{item.num != 0}}">{{item.num}}</view>
+            <button plain bindtap="changNum" data-item="{{item}}" data-itemlist="{{productList}}" data-operand="{{1}}">+</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 选好了 -->
+<view class="selected">
+  <view class="selected-totle">共￥{{totle}}元</view>
+  <view class="selected-ok" bindtap="isOk">选好了</view>
+</view>

@@ -1,0 +1,149 @@
+{
+  "id": "1998558",
+  "name": "西京房产",
+  "font_family": "iconfont",
+  "css_prefix_text": "saimingtech",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "15484805",
+      "name": "组 4548",
+      "font_class": "zu4548",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "15620488",
+      "name": "use_ico",
+      "font_class": "use_ico",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "15620489",
+      "name": "role_ico",
+      "font_class": "role_ico",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "16453388",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "16453389",
+      "name": "left_build",
+      "font_class": "left_build",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "16453390",
+      "name": "calendar",
+      "font_class": "calendar",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "16453391",
+      "name": "left_fit",
+      "font_class": "left_fit",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "16453392",
+      "name": "left_role",
+      "font_class": "left_role",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "16453393",
+      "name": "left_home",
+      "font_class": "left_home",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "16453394",
+      "name": "select",
+      "font_class": "select",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "16453395",
+      "name": "left_register",
+      "font_class": "left_register",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "16453396",
+      "name": "login_user",
+      "font_class": "login_user",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "16453397",
+      "name": "arrow",
+      "font_class": "arrow",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "16453398",
+      "name": "left_file",
+      "font_class": "left_file",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "16453399",
+      "name": "left_pay",
+      "font_class": "left_pay",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "16453400",
+      "name": "login_test",
+      "font_class": "login_test",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "16453401",
+      "name": "login_lock",
+      "font_class": "login_lock",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "16453402",
+      "name": "left_lead",
+      "font_class": "left_lead",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    },
+    {
+      "icon_id": "16453403",
+      "name": "left_vital",
+      "font_class": "left_vital",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "16453404",
+      "name": "left_compay",
+      "font_class": "left_compay",
+      "unicode": "e647",
+      "unicode_decimal": 58951
+    }
+  ]
+}

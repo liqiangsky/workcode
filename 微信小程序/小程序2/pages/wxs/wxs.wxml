@@ -1,0 +1,21 @@
+<!--pages/wxs/wxs.wxml-->
+<wxs src='./wxs.wxs' module="stus"></wxs>
+<view class="title">{{stus.stutitle}}</view>
+<view class="table">
+  <view class="row">
+    <view class="cell">学生编号</view>
+    <view class="cell">学生姓名</view>
+    <view class="cell">学生年龄</view>
+    <view class="cell">学生爱好</view>
+  </view>
+  <view class="row" wx:key='id' wx:for="{{stus.stuInfo}}">
+    <view class="cell">{{item.id}}</view>
+    <view class="cell">{{item.name}}</view>
+    <view class="cell">{{item.age}}</view>
+    <view class="cell">{{item.hobby}}</view>
+  </view>
+</view>
+<map enable-traffic='true' scale="15" latitude="{{latitude}}" longitude="{{longitude}}"></map>
+<button bindtap="localtion">选择位置</button>
+<view>你当前的位置为：{{name}}{{address}}</view>
+<button type="primary" bindtap="handle">打卡</button>

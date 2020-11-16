@@ -1,0 +1,32 @@
+@font-face {font-family: "iconfont";
+  src: url('//at.alicdn.com/t/font_2161002_j0h637shu9.eot?t=1603779621778'); /* IE9 */
+  src: url('//at.alicdn.com/t/font_2161002_j0h637shu9.eot?t=1603779621778#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAUMAAsAAAAACcgAAAS/AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqGZIViATYCJAMUCwwABCAFhG0HSxtxCCMR5nMyR/YXCTyH+rgjVLSF4iBAgOGv30QkzaiN+9XHijCR4EzwfO33O3d33/sihlli6CJWzROhiSYIkQiJIXsoEIpVPDH9DeVlkzVLIeg53UKa/M5CMvs7qwqAzbke2KgINZI7v/foCykN0kvzVH/dP9zPdNE22yyffZtLRmIF4GjAA8q+ays7OuA7oBPlG8ZuIg7jYQjgpUgT0pU1NIUEA1gngGw1rM4jiRkxJVTBrbFzjhrkDCFudaIeA6fu78sPzXIChaUBW8dWupdI+Xj9tUlDB86mZpj+7IB0CjTQBBiQ7VznFnxf3uQqvXl/J6ANgBc3CvXx/uXfp83npuOE0hWpvfAfHggKjQGxAUo/h29TmJ0TYQQCH/8QKPi0QaDhs0l8Y5QWt9oLxED8IDsMPs5jb9EY7LCguQqFs1StVLgGKqQS8BYC6ZBm4X4ggAfk2kWHMCFzcLZKqKbl6zCMMclWAwCJkGrG1tINYA2dv+3VoheOa4yl328rijvkvPVl1OnnDlt8z7MOcNaeA3D/woPMoSErIhHCWZY4wRFWa/VnElkp6yKC43DWcs/qvhNl3WZddnBD2zDGjiLxi3GkDD8f4/mI9dCW1FAXYgk5dSme/QJyw3obFyKFTNgfkYPLyLyzfkl4GuW2EWPs3cl0IvlQdD4lJ3LP+CZSqbiFZXFurHwKoYqzL5lJ+uFzvjzpBwjNzJKDQn0DJsjk3uuaZAiRGMeRFfQsYt815urCy/BKHO9tikqrgljsLo7s+xvy1zg+rBGHiDWUS7T8YokoRFTyQhgZQIsiy4rKIkV0QLvYxytF8ETh/Pvt299qxRVBrNhHvFlQ8jgAbgWhKza5zI0+V5xQEncdlMbxvPAFLvNiFj/qW963bPFjwbuIhojVPgPZP2sL6/On0bbaoqyfvgMRq8LXlOTkCIVYXcK/K4jpKArR2kX313Y82hK+9L/D5t9um8eXbArvetRf6xPm0zS388Wy0CXjrpv/OOR92PLQ4Revz3gqjQ21RYX9we8/B/XoRvO0oz1B3PhASGFd0YBOrzYO1BXQ/qOkGlKuDuWEGpxSSxhN0ePS1CSlkEf5pC4MFuB0GX8FyQvJ+be3x6nK6/T4fzrc5gTP8/dbjlOXblLz31Pmj5NX7pLz57MCfu/KVDVK0rL42f3i4ODicn/ryHlXFHRBA1bqR/UWHPzVGv5/y9hfVz4+q06YdMsv/NjLlZ6u3yEA9ZTgJ1JRW/S3iWr2GVMCTJbRG7FQD1ks8i8plZH1Ag7rjfLejzpRuxwEN4kQFC4KoHFThTb4JrDw0QI2blrBSyO9p33E2IaPGA/QwAEDQpgrUAR5AE2YJ7TBv4FFkj+wCcsWvMyI/kofNRJl6cOMStCC/kM0tDhkkYtXeUP/nhRHJS7jhVxiBNqqSWauuCD3saN8fCfiwDHNMDCPw2kiyEwJjVRBJPd17fI+qTI0ry6rTkYlaEH/IRpaHB0tl9TP39C/J8UlTQ3uF3KJk0NbNTXQV+VSq+lcZpeP70Qcv8oxzTCwdpxgkiDnL0popAot4rmvuWGurrIaXz1fY9G33hLcbq15GB8TYEJMBOxojWJ7ylSiHAZja8gfC+esSlmtAAA=') format('woff2'),
+  url('//at.alicdn.com/t/font_2161002_j0h637shu9.woff?t=1603779621778') format('woff'),
+  url('//at.alicdn.com/t/font_2161002_j0h637shu9.ttf?t=1603779621778') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_2161002_j0h637shu9.svg?t=1603779621778#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-idcard:before {
+  content: "\e7de";
+}
+
+.icon-position:before {
+  content: "\e7f1";
+}
+
+.icon-cog:before {
+  content: "\e818";
+}
+
+.icon-compass:before {
+  content: "\e86b";
+}

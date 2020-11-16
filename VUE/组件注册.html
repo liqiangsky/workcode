@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <my @click="emit"></my>
+        <my1 :my-p="msg1"></my1>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        Vue.component('my1', {
+            props:['myP'],
+            data() {
+                return {
+                    msg: "my is my1"
+                }
+            },
+            template: `<footer>
+            <p>{{ msg }}</p>
+            <p>{{ myP  }}</p>
+            </footer>`
+        });
+        Vue.component('my', {
+            data() {
+                return {
+                    msg: "my is my"
+                }
+            },
+            template: `<footer>
+            <p>{{ msg }}</p>
+            <my1></my1>
+            <button @click="$emit('click',msg)">$emit()</button>
+            </footer>`
+        });
+        new Vue({
+            el: '#app',
+            data:{
+                msg1:"hhhhhhhhhhhhhhhhh"
+            },
+            methods:{
+                emit(msg){
+                    console.log(msg)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

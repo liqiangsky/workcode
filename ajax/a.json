@@ -1,0 +1,26 @@
+{
+    "code": 200,
+    "success": [{
+            "name": "lisi",
+            "age": 18,
+            "sex": "男",
+            "phone":1199801
+        },
+        {
+            "name": "wabng",
+            "age": 28,
+            "sex": "男",
+            "phone":3560451
+        }, {
+            "name": "sdsadasdsd",
+            "age": 34,
+            "sex": "男",
+            "phone":1698761
+        }, {
+            "name": "ashdda",
+            "age": 16,
+            "sex": "男",
+            "phone":3677412
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+/* pages/text/text.wxss */
+.h1{
+  color: aqua;
+}
+.ipt{
+  border: 1px solid black;
+}
+.view{
+  display: flex;
+  text-align: center;
+}
+.jisuan{
+  height: 50px;
+  border: 1px solid red;
+}
+.swiper{
+  /* height: 200px; */
+  height: 120px;
+}
+image{
+  height: 120px;
+}

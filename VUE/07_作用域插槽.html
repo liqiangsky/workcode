@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        .no2{
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <scope-slot :stus="stus">
+        <!-- 在父级作用域中，我们可以使用带值的 v-slot 来定义我们提供的插槽 prop 的名字 -->
+        <!-- 我们选择将包含所有插槽 prop 的对象命名为 slotProps，但你也可以使用任意你喜欢的名字。 -->
+        <template v-slot:default="slotProps">
+            {{ slotProps.message }}
+            {{ slotProps.stus}}
+        </template>
+
+        <!-- 上面匹配匿名插槽 下面匹配具名插槽 -->
+        <template v-slot:stus="saiming">
+            <ul>
+                <!-- 这里我想给学号是002的学生信息 添加不同样式 如：文字飘红 -->
+                <!-- <li v-for="item in saiming.stus" :class="{no2:item.sno == '002'}">学号：{{ item.sno }} 姓名：{{ item.sname }} 年龄：{{ item.sage }}</li> -->
+                <li v-for="item in saiming.stus" :class="item.sno == '002' ? 'no2' : ''">学号：{{ item.sno }} 姓名：{{ item.sname }} 年龄：{{ item.sage }}</li>
+            </ul>
+        </template>
+
+        <!-- Vue2.6 废弃 slot-scope 属性，但是 2.x 仍然支持 -->
+        <!-- slot-scope 声明了被接收的 prop 对象会作为 slotProps 变量存在于 <template> 作用域中。你可以像命名 JavaScript 函数参数一样随意命名 slotProps。 -->
+        <template slot='ft' slot-scope="slotProps">
+            <h3>{{ slotProps }}</h3>
+            <h3>{{ slotProps.finfo }}</h3>
+        </template>
+      </scope-slot>
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+      Vue.component("scope-slot", {
+        props: ["stus"],
+        data() {
+          return {
+            message: "这是子组件中自己的数据....",
+            fmsg:"这时footer传递的内容..."
+          };
+        },
+        template: `<div>
+                <h2>关于作用域插槽的使用</h2> 
+                <!-- 绑定在 <slot> 元素上的 attribute 被称为插槽 prop。现在在父级作用域中 -->
+                <slot :message="message" :stus="stus">{{ message }}</slot>   
+                
+                <slot name="stus" :stus="stus"></slot>
+
+                <footer>
+                    <slot name='ft' :finfo="fmsg">默认值</slot>
+                </footer>
+            </div>`,
+      });
+
+      new Vue({
+        el: "#app",
+        data: {
+          stus: [
+            {
+              sno: "001",
+              sname: "Jack",
+              sage: 23,
+            },
+            {
+              sno: "002",
+              sname: "Lcuy",
+              sage: 21,
+            },
+            {
+              sno: "003",
+              sname: "David",
+              sage: 26,
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+/* pages/wxs/wxs.wxss */
+.title{
+  text-align: center;
+  font-weight: bold;
+}
+.table{
+  width: 100%;
+  display: table;
+  text-align: center;
+  border-collapse: collapse;
+}
+.row{
+  display: table-row;
+}
+.cell{
+  border: 1px solid black;
+  display: table-cell;
+}

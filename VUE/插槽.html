@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <students :aa='s1' :ab='s2'>
+            <!-- {{ aa }} -->
+            <template v-slot:stu='saiming'>
+                {{ saiming.hh }}
+                ----------------------------
+                {{ saiming.hb }}
+            </template> 
+        </students>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        Vue.component('students',{
+            props:['aa','ab'],
+            template:`<div>
+                <slot name='stu' :hh='aa' :hb='ab'>{{ aa }}{{ ab }}</slot>
+                </div>`,
+        });
+        new Vue({
+            el:'#app',
+            data:{
+                s1:[
+                    {id:1,name:'jack',age:18},
+                    {id:2,name:'lucy',age:20},
+                    {id:3,name:'dava',age:17}
+                ],
+                s2:'ssssssssssssssssssssssssss'
+            }
+        });
+    </script>
+</body>
+</html>

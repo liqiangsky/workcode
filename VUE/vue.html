@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .bg {
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+
+        .co {
+            color: red;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+
+        .div {
+            width: 500px;
+            position: relative;
+        }
+
+        .div img {
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            position: absolute;
+            bottom: 1px;
+            padding: 0;
+            left: 50%;
+            margin: 5px 0;
+            transform: translateX(-50%);
+        }
+
+        li {
+            width: 50px;
+            height: 10px;
+            background: orange;
+            margin: 0 10px;
+            border: 1px solid blue;
+            border-radius: 10px;
+        }
+
+        li.on {
+            background: white;
+            border: 1px solid pink;
+        }
+
+        #app5 {
+            width: 300px;
+            border: 1px solid red;
+        }
+
+        #app5 .none {
+            display: none;
+        }
+
+        .app5 {
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid red;
+        }
+
+        .app5 .on {
+            background: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        请选择您的性别：
+        <label>
+            <input type="radio" v-model="sex" value="男" id="" />男
+            <input type="radio" v-model="sex" value="女" id="" />女
+        </label>
+        <br>
+        您选择的性别为：<span v-model="sex">{{ sex }}</span>
+
+
+        <hr />
+        <hr />
+
+        请选择你的兴趣爱好：
+        <label>
+            <input type="checkbox" v-model="hobby" value="1" id="" />1
+            <input type="checkbox" v-model="hobby" value="2" id="" />2
+            <input type="checkbox" v-model="hobby" value="3" id="" />3
+            <input type="checkbox" v-model="hobby" value="4" id="" />4
+        </label>
+        你选择的兴趣爱好为：<span v-model="hobby">{{ hobby }}</span>
+
+        <hr />
+        <hr />
+
+        <textarea id="" cols="30" rows="10" v-model="text"></textarea>
+        <textarea id="" cols="30" rows="10" v-model="text"></textarea>
+        <textarea id="" cols="30" rows="10" v-model="text"></textarea>
+        <p>{{ text }}</p>
+    </div>
+    <div id="app1" v-cloak>
+        <fieldset>
+            <legend>计算器一</legend>
+            数字一<input type="number" @change="n1">
+            数字二<input type="number" @input="n2">
+            <button @click="fn">求和</button>
+            <p>总和为：{{ sum }}</p>
+        </fieldset>
+
+        <fieldset>
+            <legend>计算器二</legend>
+            <button @click="del">-</button>
+            <input type="text" style="width:20px;text-align: center;" v-model="num" @change="aa">
+            <button @click="add">+</button>
+        </fieldset>
+    </div>
+    <div id="app2" v-cloak>
+        <div :class="box">123213</div>
+        <div :class="{box1:'bg'}">123213</div>
+    </div>
+    <div id="app3">
+        <div :class="div">
+            <img :src="imgUrls[cutIdx]">
+            <ul>
+                <li :class="{on:cutIdx == 0}" @click="fn(0)"></li>
+                <li :class="{on:cutIdx == 1}" @click="fn(1)"></li>
+                <li :class="{on:cutIdx == 2}" @click="fn(2)"></li>
+                <li :class="{on:cutIdx == 3}" @click="fn(3)"></li>
+            </ul>
+        </div>
+        <button @click="prev" :disabled="cutIdx == 0">上一张</button>
+        <button @click="next" :disabled="cutIdx == 3">下一张</button>
+    </div>
+    <div id="app4">
+        <p v-for="(a,b,c) in people">索引：{{ c }} 属性：{{ b }} 值：{{ a }}</p>
+    </div>
+    <div id="app5">
+        <div class="app5">
+            <p v-for="(item,index) in list" :class="{on:cutIdx == index}" @click="change(index)">{{ item.tit }}</p>
+        </div>
+        <div v-for="(item,index) in list" :class="{none:cutIdx != index}">{{ item.des }}</div>
+    </div>
+    <div id="app6">
+        <div v-pin="200">jhsdsdhgasddddddddddddddddddd</div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        Vue.directive('pin', {
+            inserted: function (el, binding) {
+                el.style.position = "fixed",
+                    el.style.top = binding.value + "px"
+            }
+        });
+        const app = new Vue({
+            el: "#app",
+            data: {
+                sex: "男",
+                hobby: [1, 2],
+                text: "123"
+            }
+        });
+
+        const app1 = new Vue({
+            el: "#app1",
+            data: {
+                sum: 0,
+                num1: 0,
+                num2: 0,
+                num: 1
+            },
+            methods: {
+                fn() {
+                    this.sum = parseInt(this.num1) + parseInt(this.num2);
+                },
+                n1(e) {
+                    this.num1 = e.target.value;
+                },
+                n2(e) {
+                    this.num2 = e.target.value;
+                },
+                add() {
+                    if (++this.num > 20) {
+                        this.num = 20;
+                        return;
+                    }
+                },
+                del() {
+                    if (--this.num < 1) {
+                        this.num = 1;
+                        return;
+                    }
+                },
+                aa() {
+                    if (this.num > 20) {
+                        this.num = 20;
+                        return;
+                    }
+                    if (this.num < 1) {
+                        this.num = 1;
+                        return;
+                    }
+                }
+            }
+        });
+
+        const app2 = new Vue({
+            el: "#app2",
+            data: {
+                box: {
+                    bg: true,
+                    co: "co"
+                },
+                // box1:"bg"
+            }
+        });
+
+        const app3 = new Vue({
+            el: "#app3",
+            data: {
+                div: "div",
+                imgUrls: [
+                    "./images/20170505011.jpg",
+                    "./images/20170505012.jpg",
+                    "./images/20170726.jpg",
+                    "./images/20170725.jpg"
+                ],
+                cutIdx: 0,
+                on: "on"
+            },
+            methods: {
+                prev() {
+                    this.cutIdx--;
+                    return;
+                },
+                next() {
+                    this.cutIdx++;
+                    return;
+                },
+                fn(index) {
+                    this.cutIdx = index;
+                }
+            }
+        });
+
+        const app4 = new Vue({
+            el: "#app4",
+            data: {
+                people: {
+                    id: 1,
+                    name: "hehe",
+                    age: 18,
+                    add: "天津",
+                    phone: 18722525
+                }
+            }
+        });
+
+        const app5 = new Vue({
+            el: "#app5",
+            data: {
+                cutIdx: 0,
+                list: [{
+                        id: 1,
+                        tit: "国际新闻",
+                        des: "美国防部宣布：美国将从德国撤军11900人",
+                    },
+                    {
+                        id: 2,
+                        tit: "国内新闻",
+                        des: "日新增病例破百影响多大?专家:引发大规模反弹可能性不大",
+                    },
+                    {
+                        id: 3,
+                        tit: "热点新闻",
+                        des: "习近平为亚投行勾画美好愿景  人民至上，我们在一起",
+                    },
+                ],
+            },
+            methods: {
+                change(index) {
+                    this.cutIdx = index;
+                }
+            }
+        });
+
+        const app6 = new Vue({
+            el: "#app6",
+            data: {
+                color: "orange"
+            }
+        });
+    </script>
+    <script>
+        console.log(fn); //?? undefined
+        var fn = 100;
+        console.log(fn); //??100
+        function fn(a, b) {
+            return a + b;
+        }
+        console.log(fn); //?100
+        function fn(a, b, c) {
+            return a + b + c;
+        }
+        console.log(fn); //?100
+        function fn() {
+            return;
+        }
+        console.log(fn); //?100
+        var fn = function () {
+
+        }
+        console.log(fn); //?funcation
+        function fn(fn) {
+            console.log(fn); //??100
+        }
+        fn(10, 20)
+        console.log(fn); //?30
+
+
+
+        for (var i = 0; i < 3; i++) {
+            console.log(i);
+        }
+        console.log("i=",i);
+    </script>
+</body>
+
+</html>

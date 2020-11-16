@@ -1,0 +1,485 @@
+@charset "utf-8";
+
+@media (max-width:1200px) {
+    header {
+        .header {
+            padding-left: 60px;
+
+            .left {
+                padding: 0;
+                display: flex;
+                align-items: center;
+
+                a {
+                    width: 152px;
+                    height: 60px;
+                    background: url("../images/yue-sprit001.png") no-repeat -202px 0;
+                }
+
+                span {
+                    font-size: 1.6em;
+                    padding-left: 15px;
+                }
+            }
+
+            .right {
+                height: 80px;
+                line-height: 80px;
+                display: none;
+            }
+
+            .menu {
+                display: block;
+                height: 80px;
+                line-height: 80px;
+
+                .container {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:990px) {
+    #nav {
+        .tgzc {
+            .row {
+                .items {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    header {
+        .header {
+            padding-left: 20px;
+
+            .left {
+                a {
+                    width: 122px;
+                    height: 50px;
+                    background: url("../images/yue-sprit001.png") no-repeat 0px -78px;
+                }
+
+                span {
+                    font-size: 1.2em;
+                    font-weight: 400;
+                }
+            }
+
+            .right {
+                height: 60px;
+                line-height: 60px;
+            }
+
+            .menu {
+                height: 60px;
+                line-height: 60px;
+                .clearfix{
+                    line-height: 60px;
+                }
+                .container {
+                    top: 60px;
+                }
+            }
+        }
+    }
+
+    #search {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .search {
+            width: 100%;
+            height: 40px;
+
+            input {
+                height: 40px;
+            }
+
+            span {
+                height: 40px;
+                background: #fdd26d url("../images/yue-sprit001.png") no-repeat 50% -172px;
+            }
+        }
+    }
+
+    #nav {
+        h2 {
+            margin: 1em 0;
+        }
+
+        .items- {
+
+            // padding-top: 0;
+            .row {
+                .col-xs-6 {
+                    width: 50%;
+                }
+
+                .col-sm-4 {
+                    flex: unset;
+                    max-width: unset;
+                }
+
+                .col-xs-4 {
+                    width: 33.33333%;
+                }
+            }
+        }
+
+        .znht {
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .gxhfw {
+            padding-left: 28px;
+            padding-right: 28px;
+
+            .row {
+                .flgw {
+                    .footer {
+                        p {
+                            padding-bottom: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tgzc {
+            .row {
+                padding-left: 40px;
+                padding-right: 40px;
+
+                .items {
+                    span {
+                        width: 120px;
+                        transform: scale(0.6);
+                    }
+                }
+            }
+
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .news {
+            .row {
+                .col-sm-3 {
+                    flex: unset;
+                    max-width: unset;
+
+                    .carousel {
+                        margin: 0 auto;
+
+                        .carousel-inner {
+                            width: 50%;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        padding-bottom: 10px;
+        ;
+
+        .container-fluid {
+            padding: 0 15px;
+            width: 100%;
+            display: block;
+
+            .left {
+                width: 100%;
+                max-width: 100%;
+
+                .col-xs-6 {
+                    width: 50%;
+                    padding-left: 20px;
+                    flex: unset;
+                    max-width: unset;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .right {
+                li {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:650px) {
+    header {
+        .header {
+            .left {
+                a {
+                    width: 120px;
+                    background: url("../images/yue-sprit001.png") no-repeat -125px -77px;
+                }
+
+                span {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+
+    #banner,
+    #search {
+        display: none;
+    }
+
+    #nav {
+        margin: 0;
+
+        .items- {
+            padding-top: 0;
+        }
+
+        .znht {
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .gxhfw {
+            padding-top: 20px;
+
+            .row {
+                .items {
+                    padding: 0;
+
+                    .footer {
+                        h3 {
+                            font-size: 1.1em;
+                        }
+                    }
+                }
+
+                // .flgw {
+                //     
+                // }
+            }
+        }
+
+        .tgzc {
+            padding: 20px 0;
+
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .news {
+            padding-top: 40px;
+
+            .row {
+                .carousel {
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:560px) {
+    header {
+        .header {
+            .left {
+                a {
+                    width: 105px;
+                    height: 50px;
+                    background: url("../images/yue-sprit001.png") no-repeat -125px -80px;
+                }
+
+                span {
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+
+    #nav {
+        h2 {
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        .znht {
+            padding-top: 5px;
+
+            .r1 {
+                display: none;
+            }
+
+            .container-fluid {
+                display: block;
+            }
+        }
+
+        .gxhfw {
+            .row {
+                .items {
+                    .footer {
+                        p {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tgzc {
+            .r1 {
+                display: none;
+            }
+
+            .container-fluid {
+                display: block;
+            }
+        }
+
+        .news {
+            .row {
+
+                .carousel,
+                .yhd {
+                    display: none;
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width:1200px) {
+
+    #nav {
+        .items- {
+            .row {
+                // padding: 2em 15px 3em 15px;
+                width: 1170px !important;
+                max-width: 1170px;
+
+                .col-md-3 {
+                    width: 25% !important;
+                }
+            }
+        }
+
+        .znht {
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .tgzc {
+            .container-fluid {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        padding: 21px 15px 50px 15px;
+
+        .container-fluid {
+            width: 1170px !important;
+        }
+    }
+
+}
+
+@media (min-width:992px) {
+    #nav {
+        .items- {
+            .row {
+                width: 970px !important;
+
+                .col-md-3 {
+                    width: 25%;
+                }
+            }
+        }
+
+        .znht {
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .tgzc {
+            .container-fluid {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        .container-fluid {
+            padding: 0 15px;
+            width: 970px !important;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    #nav {
+        .items- {
+            .row {
+                width: 750px;
+
+                .col-md-3 {
+                    flex: unset;
+                    max-width: unset;
+                }
+
+                .col-sm-4 {
+                    width: 33.33333%;
+                }
+
+                .col-sm-3 {
+                    width: 25%;
+                }
+            }
+        }
+
+        .znht {
+            .container-fluid {
+                display: none;
+            }
+        }
+
+        .tgzc {
+            .container-fluid {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        .container-fluid {
+            padding: 0 15px;
+            width: 750px;
+
+            .left {
+                .col-sm-3 {
+                    padding-left: 40px;
+                }
+            }
+        }
+    }
+}

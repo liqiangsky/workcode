@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <router-link to='/login'>登录</router-link>
+        <router-link to='/login1/123'>登录1</router-link>
+        <router-link to='/regist'>注册</router-link>
+        <router-view></router-view>
+    </div>
+    <script>
+        const login = {
+            template: `<div>登录页面</div>`
+        };
+        //动态路由
+        const login1 = {
+            props: ['name'],
+            template: `<div>登录页面{{ $route.params.id }}{{ name }}</div>`
+        };
+        const regist = {
+            template: `<div>注册页面</div>`
+        };
+
+    
+            const routes = [{
+                    path: '/',
+                    redirect: '/regist'
+                },
+                {
+                    path: '/login',
+                    component: login
+                },
+                //动态路由
+                {
+                    path: '/login1/:id',
+                    component: login1,
+                    props: {name: "abc"},
+                },
+                {
+                    path: '/regist',
+                    component: regist
+                },
+            ];
+
+            const router = new VueRouter({
+                routes
+            });
+
+
+            new Vue({
+                el: '#app',
+                router
+            });
+    </script>
+</body>
+
+</html>

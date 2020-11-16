@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 0.186667rem;
+    z-index: 999;
+    background: #fff;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 1.066667rem;
+        padding: 0 0.2rem;
+
+        .search {
+            height: 0.853333rem;
+            border: none;
+            border-radius: 100px;
+            margin-right: 0.266667rem;
+            outline: none;
+            padding-left: 1rem;
+            font-size: 0.346667rem;
+            flex: 1;
+            background: #F5F5F5 url("../images/icon_search.png") no-repeat 0.266667rem 50%/5%;
+        }
+
+        .msg {
+            img {
+                width: 0.64rem;
+            }
+        }
+    }
+}
+
+#body {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: 720px;
+    position: fixed;
+    padding: 1.066667rem 0.186667rem;
+    background: #fff;
+
+    .menu {
+        width: 30%;
+        height: 100%;
+        background: #fff;
+        float: left;
+        padding-left:0.2rem;
+        padding-right: 0.3rem;
+        overflow-y: auto;
+
+        ul {
+            padding-bottom: 1.6rem;
+            li {
+                position: relative;
+                margin: 0.853333rem 0;
+                // margin-bottom: 0.426667rem;
+                a {
+                    font-size: 0.346667rem;
+                    display: block;
+                    color: black;
+                    
+                    span {
+                        display: block;
+
+                    }
+                }
+            }
+
+            .active {
+                a {
+                    color: #e01d20;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 0.053333rem;
+                        height: 100%;
+                        border-radius:1.333333rem;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background: #e01d20;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .items {
+        width: 70%;
+        margin-left: 30%;
+        height: 100%;
+        background: orange;
+        .item{
+            display: none;
+        }
+        .active{
+            display: block;
+        }
+    }
+}
+
+
+
+
+footer {
+    max-width: 720px;
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+
+    .footer-menu {
+        display: flex;
+        background: transparent;
+
+        a {
+            display: block;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

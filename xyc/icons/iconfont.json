@@ -1,0 +1,86 @@
+{
+  "id": "2065649",
+  "name": "星云餐",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6151456",
+      "name": "angle-left",
+      "font_class": "angle-left",
+      "unicode": "e84f",
+      "unicode_decimal": 59471
+    },
+    {
+      "icon_id": "6150963",
+      "name": "scan",
+      "font_class": "scan",
+      "unicode": "e76f",
+      "unicode_decimal": 59247
+    },
+    {
+      "icon_id": "6151041",
+      "name": "laptop",
+      "font_class": "laptop",
+      "unicode": "e797",
+      "unicode_decimal": 59287
+    },
+    {
+      "icon_id": "6151052",
+      "name": "mobile-alt",
+      "font_class": "mobile-alt",
+      "unicode": "e79a",
+      "unicode_decimal": 59290
+    },
+    {
+      "icon_id": "6151275",
+      "name": "clock",
+      "font_class": "clock",
+      "unicode": "e819",
+      "unicode_decimal": 59417
+    },
+    {
+      "icon_id": "7906283",
+      "name": "step mode",
+      "font_class": "stepmode",
+      "unicode": "e87d",
+      "unicode_decimal": 59517
+    },
+    {
+      "icon_id": "11307823",
+      "name": "Directory tree",
+      "font_class": "Directory-tree",
+      "unicode": "e892",
+      "unicode_decimal": 59538
+    },
+    {
+      "icon_id": "6151396",
+      "name": "angle-right",
+      "font_class": "angle-right",
+      "unicode": "e84e",
+      "unicode_decimal": 59470
+    },
+    {
+      "icon_id": "6151188",
+      "name": "all",
+      "font_class": "all",
+      "unicode": "e7e6",
+      "unicode_decimal": 59366
+    },
+    {
+      "icon_id": "6151294",
+      "name": "times",
+      "font_class": "times",
+      "unicode": "e82a",
+      "unicode_decimal": 59434
+    },
+    {
+      "icon_id": "6343824",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e86b",
+      "unicode_decimal": 59499
+    }
+  ]
+}

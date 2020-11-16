@@ -1,0 +1,156 @@
+/* pages/home/home.wxss */
+/* 头部样式结构---------------------- */
+.header {
+  height: 120rpx;
+  padding: 20rpx 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #FF2D4A;
+  /* background-color: pink; */
+}
+
+.header image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.header-title {
+  color: #fff;
+  height: 120rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.header-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header-config {
+  font-size: 14px;
+}
+
+/* 商品样式结构----------------- */
+.products {
+  width: 750rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-type {
+  width: 27%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  text-align: center;
+  background-color: skyblue;
+}
+
+.product-type-item {
+  padding: 10rpx 0;
+}
+
+.product-list {
+  height: 100%;
+  flex: 1;
+  /* background-color: red; */
+}
+
+.product-list-item {
+  padding: 20rpx 30rpx;
+}
+
+.product-name {
+  font-weight: bold;
+  /* background-color: red; */
+}
+
+.item {
+  display: flex;
+  padding: 20rpx 0;
+  position: relative;
+  /* background-color: royalblue; */
+}
+
+.item-count {
+  /* background-color: aqua; */
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  bottom: 20rpx;
+}
+.item-count view{
+  font-size: 14px;
+  display: inline-block;
+  padding: 0 10rpx;
+}
+
+.item-count button {
+  display: inline-block;
+  color: #FF2D4A;
+  width: 40rpx !important;
+  height: 40rpx !important;
+  line-height: 40rpx !important;
+  border-radius: 50% !important ;
+  border-color: #ffa5b1;
+  padding: 0 !important;
+}
+
+.item-img {
+  width: 160rpx;
+  height: 120rpx;
+  margin-right: 16rpx;
+}
+
+.item-config {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  /* background-color: salmon; */
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 400;
+  /* font-weight: bold; */
+}
+
+.item-sales {
+  font-size: 12px;
+  color: #969696;
+}
+
+.item-price {
+  font-size: 14px;
+  color: #FF2D4A;
+}
+
+
+/* 选好了 */
+.selected {
+  width: 750rpx;
+  height: 120rpx;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.selected-totle {
+  width: 70%;
+  height: 100%;
+  line-height: 120rpx;
+  background-color: #e3e3e3;
+}
+
+.selected-ok {
+  flex: 1;
+  height: 100%;
+  line-height: 120rpx;
+  background-color: #FF2D4A;
+}

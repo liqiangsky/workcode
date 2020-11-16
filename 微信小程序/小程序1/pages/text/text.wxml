@@ -1,0 +1,39 @@
+<swiper class='swiper' autoplay circular>
+  <swiper-item><image mode='aspectFit' src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fdd30e55069adb64bb354d4f8d9f9b60.jpg?w=2452&h=920"></image></swiper-item>
+  <swiper-item><image mode='aspectFit' src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3d9f8cf47b5eeb286a83e6e95a60105a.jpg?thumb=1&w=1533&h=575&f=webp&q=90"></image></swiper-item>
+  <swiper-item><image mode='aspectFit' src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/10aac533af4489c077bc6a8e15219e3b.jpg?thumb=1&w=1533&h=575&f=webp&q=90"></image></swiper-item>
+  <swiper-item><image mode='aspectFit' src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9ebff5f5c1f52f2dbdd611897adbefd4.jpg?thumb=1&w=1533&h=575&f=webp&q=90"></image></swiper-item>
+</swiper>
+<!--pages/text/text.wxml-->
+<rich-text nodes="{{ nodes }}"></rich-text>
+<text>是的撒大苏打</text>
+<view wx:for="{{ array }}" wx:key='item' wx:for-item="hh">{{ hh.id }}</view>
+<view>
+<input class='ipt' type="text" bindinput="change"/>
+<view>您输入的内容为：{{msg}}</view>
+</view>
+<checkbox-group bindchange="shuiguo">
+<checkbox checked value="苹果">苹果</checkbox>
+<checkbox value="葡萄">葡萄</checkbox>
+<checkbox value="香蕉">香蕉</checkbox>
+</checkbox-group>
+<view>您选择的是：{{shuiguo}}</view>
+
+<view class="view">
+  <button bindtap="jian" data-num="{{num}}">-</button>
+  <input class="jisuan" type="text" value="{{num}}"/>
+  <button bindtap="jia" data-num="{{num}}">+</button>
+</view>
+
+
+
+<view class="view">
+  <button bindtap="adddel" data-num="{{num1}}">-</button>
+  <input class="jisuan" type="text" value="{{num}}"/>
+  <button bindtap="adddel" data-num="{{num2}}">+</button>
+</view>
+
+<view>{{msg}}</view>
+<zj bindabc='aa'></zj>
+
+

@@ -1,0 +1,9 @@
+<!--components/zj/zj.wxml-->
+<view>{{msg}}</view>
+<button bindtap="click">按钮</button>
+
+
+
+<view>
+<button bindtap="fn">子传父</button>
+</view>

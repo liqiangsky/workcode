@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cart {
+            width: 400px;
+            text-align: center;
+            margin: 50px auto;
+            border: 1px solid black;
+        }
+
+        .cart-header {
+            padding: 5px 0;
+            border-bottom: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .img-logo {
+            width: 100px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        tr {
+            background: pink;
+            padding: 5px 0;
+            border-bottom: dotted 1px black;
+        }
+
+        tr:last-child {
+            border: none;
+        }
+
+        .delect:hover {
+            background-color: red;
+        }
+
+        .cart-footer {
+            display: flex;
+            padding: 5px;
+            justify-content: flex-end;
+            align-items: center;
+            border-top: 1px solid black;
+        }
+
+        .cart-sum {
+            margin-right: 10px;
+        }
+
+        .delect {
+            padding: 5px 5px;
+        }
+
+        .delect,
+        button {
+            cursor: pointer;
+        }
+
+        input,
+        button {
+            outline: none;
+            border: none;
+        }
+
+        input {
+            width: 30px;
+            height: 20px;
+            text-align: center;
+        }
+
+        button {
+            width: 20px;
+            height: 20px;
+        }
+
+        .jiesuan {
+            width: unset;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <my-cart>
+
+        </my-cart>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        const cartHeader = {
+            template: `<div class='cart-header'>
+                <h2>我的购物车</h2>
+            </div>`
+        };
+        const cartSection = {
+            props: ['phone'],
+            template: `<div class='cart-section'>
+                <table>
+                    <tr v-for='(item,index) in phone'>
+                        <td class='img-logo'><img :src='item.imgUrl'/></td>
+                        <td class='name'>{{ item.name }}</td>
+                        <td>&yen;{{ item.price }}</td>
+                        <td>
+                            <button @click='$emit("del",item.id,"del")' :disabled='item.count == 1'>-</button>
+                            <input type='text' v-model='item.count' @change='$emit("updata",item.id,"change")'>
+                            <button @click='$emit("add",item.id,"add")'>+</button>
+                        </td>
+                        <td class='delect' @click="$emit('removeItem',item.id)">&times;</td>
+                    </tr>
+                </table>
+            </div>`,
+        };
+        const cartFooter = {
+            props: ['phone'],
+            template: `<div class='cart-footer'>
+                    <p class='cart-sum'>总计:<strong>{{ sum }}</strong>元</p>
+                    <button class='jiesuan'>结算</button>
+                </div>`,
+            computed: {
+                sum() {
+                    let result = 0;
+                    this.phone.forEach(item => {
+                        result += item.price * item.count
+                    });
+                    return result;
+                }
+            }
+        };
+        Vue.component('myCart', {
+            data() {
+                return {
+                    phones: [{
+                            id: 1,
+                            imgUrl: "./images/xiaomi.jpg",
+                            name: "小米",
+                            price: 3999,
+                            count: 1
+                        },
+                        {
+                            id: 2,
+                            imgUrl: "./images/huawei.jpg",
+                            name: "华为",
+                            price: 4999,
+                            count: 1
+                        },
+                        {
+                            id: 3,
+                            imgUrl: "./images/vivo.jpg",
+                            name: "vivo",
+                            price: 2999,
+                            count: 1
+                        },
+                    ]
+                }
+            },
+            template: `<div class='cart'>
+                <cart-header></cart-header>
+                <cart-section :phone='phones' @removeItem='remove' @updata='change' @del='change' @add='change'></cart-section>
+                <cart-footer :phone='phones'></cart-footer>
+            </div>`,
+            components: {
+                'cart-header': cartHeader,
+                'cart-section': cartSection,
+                'cart-footer': cartFooter
+            },
+            methods: {
+                change(id, type) {
+                    this.phones.some((item, index) => {
+                        if (item.id == id) {
+                            if (type == 'change') {
+                                if (item.count < 1 || item.count == '' || isNaN(item.count)) {
+                                    item.count = 1;
+                                }
+                                this.phones[index].count = parseInt(item.count);
+                                return;
+                            } else if (type == 'del') {
+                                item.count = --item.count < 1 ? 1 : item.count;
+                                return;
+                            } else if (type = 'add') {
+                                item.count++;
+                            }
+                        }
+                    });
+                },
+                remove(id) {
+                    let index = this.phones.findIndex(item => {
+                        return item.id == id;
+                    });
+                    this.phones.splice(index, 1);
+                }
+            }
+        });
+        new Vue({
+            el: '#app',
+            data: {},
+        });
+    </script>
+</body>
+
+</html>

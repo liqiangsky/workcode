@@ -1,0 +1,19 @@
+// footer开始
+#footer {
+    position: fixed;
+    bottom: 0;
+    background: #274479;
+    width: 100%;
+    padding: .125rem /* 2/16 */ 0;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    p {
+        margin:0;
+        color: white;
+        font-size:.25rem /* 4/16 */;
+    }
+}
+
+// footer结束

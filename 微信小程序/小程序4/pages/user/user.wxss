@@ -1,0 +1,60 @@
+/* pages/user/user.wxss */
+@import '../../icon/icon.wxss';
+page{
+  background-color: #e3e3e3;
+}
+.login {
+  margin-top: 500rpx;
+}
+.userinfos{
+  padding: 20rpx;
+}
+.user{
+  padding: 20rpx;
+  display: flex;
+  color: #000;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.user-img{
+  width: 140rpx;
+  height: 140rpx;
+  margin-right: 40rpx;
+}
+.user-config{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+.options{
+  padding:0 20rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.compass,
+.punchcard,
+.postcard{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #a1a1a1;
+}
+.postcard{
+  border: none;
+}
+icon{
+  font-size: 18px !important;
+  margin-right: 20rpx;
+}
+text{
+  font-size: 16px;
+}
+.icon-idcard{
+  font-weight: 500;
+}
+.setting{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  background-color: #fff;
+}

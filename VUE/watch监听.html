@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model.lazy="uname"><span :class={success:isSuccess,error:isError}>{{ msg }}</span>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                uname: '',
+                msg: '',
+                isSuccess: false,
+                isError: false,
+            },
+            methods: {
+                checkName(name) {
+                    this.isSuccess = this.isError = false;
+                    let str = '正在验证中...';
+                    let index = 0
+                    let timer = setInterval(() => {
+                        this.msg = str.substring(0, index);
+                        index = index++ == str.length - 1 ? 0 : index;
+                    }, 200);
+                    setTimeout(() => {
+                        clearInterval(timer);
+                        console.log(name)
+                        if (name == 'admin') {
+                            this.isError = true;
+                            this.msg = '× 用户名已存在！';
+                        } else {
+                            this.isSuccess = true;
+                            this.msg = '√ 可以注册！';
+                        }
+                    }, 4000);
+
+                }
+            },
+            watch: {
+                uname(val) {
+                    if (val.trim() == '') {
+                        this.msg = '';
+                        return;
+                    }
+                    this.checkName(val);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

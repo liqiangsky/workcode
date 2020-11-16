@@ -1,0 +1,11 @@
+/* pages/compass/compass.wxss */
+.title {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.compass {
+  /* 750设计稿 1px = 2rpx 使用rpx单位屏幕自适应*/
+  width: 750rpx;
+  height: 750rpx;
+}

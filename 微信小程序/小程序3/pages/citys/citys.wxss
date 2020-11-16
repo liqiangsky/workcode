@@ -1,0 +1,72 @@
+/* pages/citys/citys.wxss */
+.hot-title,
+.his-title,
+.city-title{
+  font-size: 20px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+/* 右侧字母选择区域 -----------------*/
+.searchLetter{
+  width: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.zm{
+  width:100% ;
+  text-align: center;
+  /* background-color: pink; */
+}
+/* 右侧字母选择区域 -----------------*/
+/* 当前城市------------------------- */
+.localcity{
+  font-size: 25px;
+  font-weight: bold;
+}
+/* 当前城市------------------------- */
+/* 热门城市------------------------- */
+.hotCitys{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hot-city-item{
+  width: 25%;
+  padding:5px 0;
+}
+/* 热门城市------------------------- */
+/* 历史城市------------------------- */
+.historyCitys{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.history-city-item{
+  width: 25%;
+  padding:5px 0;
+}
+/* 城市列表------------------------- */
+.cityLists{
+  width: 90%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 320px;
+  /* background-color: red; */
+}
+.scroll{
+  height: 100%;
+}
+.initial{
+  font-weight: bold;
+}
+.initial-citys{
+  padding: 5px 0;
+}
+.initial-city{
+  padding: 5px 0;
+}

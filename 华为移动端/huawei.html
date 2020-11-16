@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华为</title>
+    <link rel="stylesheet" href="./js/lib/bootstarp/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./js/lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- 页头 -->
+    <header>
+        <div class="header container-fuild">
+            <a class="logo left" href="javascrip:;">
+                <img src="./images/vmall_white.png" alt="">
+            </a>
+            <input type="text">
+            <div class="container-fuild right">
+                <a class="msg" href="javascrip:;"><img src="./images/icon_message.png" alt=""></a>
+                <a class="login" href="javascrip:;">登录</a>
+            </div>
+        </div>
+        <div class="header-menu">
+            <ul class="container-fuild menu1">
+                <li class="active"><a href="javascript:;">推荐</a></li>
+                <li><a href="javascript:;">华为专区</a></li>
+                <li><a href="javascript:;">荣耀专区</a></li>
+                <li><a href="javascript:;">P40 系列</a></li>
+                <a href="javascript:;"><i class="i-down fa fa-angle-down"></i></a>
+            </ul>
+            <div class="menu2">
+                <ul class="menu2-topbar">
+                    <li><a href="javascript:;">全部</a></li>
+                    <li><a href="javascript:;"><i class="i-up fa fa-angle-up"></i></a></li>
+                </ul>
+                <ul class="menu2-list">
+                    <li class="active"><a href="javascript:;">推荐</a></li>
+                    <li><a href="javascript:;">华为专区</a></li>
+                    <li><a href="javascript:;">荣耀专区</a></li>
+                    <li><a href="javascript:;">P40 系列</a></li>
+                    <li><a href="javascript:;">安心居家</a></li>
+                    <li><a href="javascript:;">拼团</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- 主体 -->
+    <section id="body">
+        <div class="container-fuild bj text-center">
+            <!-- 空白 -->
+            <div class="topbar"></div>
+            <!-- 轮播1 -->
+            <div class="container-fuild carousel1">
+                <div class="swiper-container" id="swiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/banner1.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/banner2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/banner3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/banner4.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/banner5.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/banner6.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/banner7.jpg" alt=""></div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <!-- 轮播2 -->
+            <div class="container-fuild carousel2">
+                <div class="swiper-container" id="swiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <ul class="menu1">
+                                <li><a href="javascript:;"><span class="bg-1"></span>会员领券</a></li>
+                                <li><a href="javascript:;"><span class="bg-2"></span>华为数码</a></li>
+                                <li><a href="javascript:;"><span class="bg-3"></span>教育优惠</a></li>
+                                <li><a href="javascript:;"><span class="bg-4"></span>新品上市</a></li>
+                                <li><a href="javascript:;"><span class="bg-5"></span>以旧换新</a></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide">
+                            <ul class="menu2">
+                                <li><a href="javascript:;"><span class="bg-1"></span>邀请有礼</a></li>
+                                <li><a href="javascript:;"><span class="bg-2"></span>众测</a></li>
+                                <li><a href="javascript:;"><span class="bg-3"></span>直播频道</a></li>
+                                <li><a href="javascript:;"><span class="bg-4"></span>积分商城</a></li>
+                                <li><a href="javascript:;"><span class="bg-5"></span>生态产品</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 商城头条 -->
+        <div class="container-fuild shopping-mall">
+            <img src="./images/logo_wapHeadNews.png" alt="">
+            <div class="container-fuild news carousel3">
+                <div class="swiper-container" id="swiper3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">全场景体验，发现更多电脑+手机新玩法</div>
+                        <div class="swiper-slide">重磅发布 | EMUI11</div>
+                        <div class="swiper-slide">觅石超声波清洗机0元抢购中</div>
+                    </div>
+                </div>
+            </div>
+            <a class="more" href="javascript:;">更多</a>
+        </div>
+        <!-- 倒计时 -->
+        <div class="container-fuild time-shopping text-center">
+            <div class="time">
+                限时购
+                <h3 id="time"></h3>
+                <span>后结束</span>
+            </div>
+        </div>
+        <!-- 限时购商品列表 -->
+        <div class="container-fuild shopping-lists text-center">
+            <div class="container-fuild carousel4">
+                <div class="swiper-container" id="swiper4">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_1.png" alt="">
+                                    <span>MatePad 5G</span>
+                                </div>
+                                <p>享3期免息</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_2.png" alt="">
+                                    <span>荣耀Play4 Pro</span>
+                                </div>
+                                <p>最高优惠200</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_3.png" alt="">
+                                    <span>Matebook X 2020</span>
+                                </div>
+                                <p>享3期免息</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_4.png" alt="">
+                                    <span>笔记本Pro 2020</span>
+                                </div>
+                                <p>晒单赢好礼</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_5.png" alt="">
+                                    <span>华为手环 B6</span>
+                                </div>
+                                <p>限时特惠50</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_6.png" alt="">
+                                    <span>荣耀平板V6</span>
+                                </div>
+                                <p>降150+免息</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_7.png" alt="">
+                                    <span>荣耀笔记本</span>
+                                </div>
+                                <p>晒单赢好礼</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_8.png" alt="">
+                                    <span>MateBook X Pro</span>
+                                </div>
+                                <p>享3期免息</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_9.png" alt="">
+                                    <span>华为M6 10.8</span>
+                                </div>
+                                <p>直降50元</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_10.png" alt="">
+                                    <span>FlyPods 3真无线耳机</span>
+                                </div>
+                                <p>￥499免息 <del>￥799</del></p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/142_11.png" alt="">
+                                    <span>Sound X音箱</span>
+                                </div>
+                                <p>直降500</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 华为手机 -->
+        <div class="container-fuild huawei-phone text-center">
+            <ul class="phone1">
+                <li>
+                    <a href="javascript:;">
+                        <img src="./images/huawei-phone1.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="./images/huawei-phone2.png" alt="">
+                    </a>
+                    <a href="javascript:;">
+                        <img src="./images/huawei-phone3.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascrtip:;">
+                        <img src="./images/huawei-phone4.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascrtip:;">
+                        <img src="./images/huawei-phone5.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="./images/huawei-phone6.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="./images/huawei-phone7.png" alt="">
+                    </a>
+                </li>
+            </ul>
+            <ul class="phone2">
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="./images/428_1.png" alt="">
+                        </div>
+                        <h4>HUAWEI P40 5G</h4>
+                        <span>享12期免息</span>
+                        <p>￥4488</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="./images/428_2.png" alt="">
+                        </div>
+                        <h4>荣耀30S</h4>
+                        <span>8G版限量送音箱</span>
+                        <p>￥2399</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="./images/428_3.png" alt="">
+                        </div>
+                        <h4>HUAWEI nova 7<br>Pro 5G</h4>
+                        <span>享3期免息</span>
+                        <p>￥3699</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 精品推荐 -->
+        <div class="container-fuild recommendation text-center">
+            <h2 class="h2">精品推荐</h2>
+            <div class="container-fuild carousel5">
+                <div class="swiper-container" id="swiper5">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_1.png" alt="">
+                                    <span>享3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">MatePad Pro</p>
+                                    <p class="price">￥3799</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_2.png" alt="">
+                                    <span>拼团更优惠</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀智慧屏X1系列</p>
+                                    <p class="price">￥2499</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_3.png" alt="">
+                                    <span>最高省3000+3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为智慧屏</p>
+                                    <p class="price">￥5199<del>￥5499</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_4.png" alt="">
+                                    <span>新品特惠20+3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">HUAWEI FreeLace<br>Pro 无线耳机</p>
+                                    <p class="price">￥579<del>￥599</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_5.png" alt="">
+                                    <span>最高优惠100+限量送保护套</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">【5G】荣耀平板V6</p>
+                                    <p class="price">￥2199</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_6.png" alt="">
+                                    <span>3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀平板6 10.1英寸</p>
+                                    <p class="price">￥1699</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_7.png" alt="">
+                                    <span>晒单增内胆包+3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">MateBook X Pro</p>
+                                    <p class="price">￥9999</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_8.png" alt="">
+                                    <span>享3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">MatePad 10.8英寸</p>
+                                    <p class="price">￥2399</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_9.png" alt="">
+                                    <span>新品上市</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">HUAWEI X GM眼镜<br>新品</p>
+                                    <p class="price">￥2499</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_10.png" alt="">
+                                    <span>享3期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">MateBook 13</p>
+                                    <p class="price">￥6999</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_11.png" alt="">
+                                    <span>限时特惠50+6期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">HUAWEI FreeBuds 3<br>无线耳机</p>
+                                    <p class="price">￥949<del>￥999</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_12.png" alt="">
+                                    <span>限时特惠50元</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为平板 M6 10.8英寸</p>
+                                    <p class="price">￥2649<del>￥2699</del></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 手机 -->
+        <div class="container-fuild phone text-center">
+            <h2 class="h2">手机</h2>
+            <ul>
+                <li>
+                    <a href="javascript:;">
+                        <div class="container">
+                            <img src="./images/428_428_428_1.png" alt="">
+                            <span>限时直降300元</span>
+                        </div>
+                        <div class="msg text-center">
+                            <p class="name">HUAWEI nova 5z</p>
+                            <p class="price">￥1499<del>￥1799</del></p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="container">
+                            <img src="./images/428_428_428_2.png" alt="">
+                            <span>6400万锐力四摄</span>
+                        </div>
+                        <div class="msg text-center">
+                            <p class="name">荣耀Play4</p>
+                            <p class="price">￥1799</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="container">
+                            <img src="./images/428_428_428_3.png" alt="">
+                            <span>最高省100+赠耳机</span>
+                        </div>
+                        <div class="msg text-center">
+                            <p class="name">华为畅享Z 5G</p>
+                            <p class="price">￥1699</p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="container">
+                            <img src="./images/428_428_428_4.png" alt="">
+                            <span>享6期免息</span>
+                        </div>
+                        <div class="msg text-center">
+                            <p class="name">荣耀X10 Max 5G</p>
+                            <p class="price">￥1899</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="container-fuild carousel6">
+                <div class="swiper-container" id="swiper6">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_1.png" alt="">
+                                    <span>赠华为耳机</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为畅享20 Plus 5G</p>
+                                    <p class="price">￥2299</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_2.png" alt="">
+                                    <span>晒单抽好礼</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀30青春版</p>
+                                    <p class="price">￥1899</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_3.png" alt="">
+                                    <span>购机赠耳机</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为畅享20 5G</p>
+                                    <p class="price">￥1699</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_4.png" alt="">
+                                    <span>最高优惠300元</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀9X</p>
+                                    <p class="price">￥1399<del>￥1599</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_5.png" alt="">
+                                    <span>超清大屏 极速5G</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为麦芒 9 5G</p>
+                                    <p class="price">￥2199</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_6.png" alt="">
+                                    <span>最高优惠400元</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀20 PRO</p>
+                                    <p class="price">￥2299<del>￥2699</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_7.png" alt="">
+                                    <span>购机赠耳机</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为畅享20 Pro</p>
+                                    <p class="price">￥1999</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_8.png" alt="">
+                                    <span>优惠500 部分送配件</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀V30 PRO</p>
+                                    <p class="price">￥3399<del>￥3899</del></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_9.png" alt="">
+                                    <span>麒麟810液冷散热</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀9X PRO</p>
+                                    <p class="price">￥1399</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_10.png" alt="">
+                                    <span>最高优惠200</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为畅享10 Plus</p>
+                                    <p class="price">￥1399</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_11.png" alt="">
+                                    <span>最高优惠150</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">华为畅享10</p>
+                                    <p class="price">￥1299</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:;">
+                                <div class="container">
+                                    <img src="./images/428_428_428_12.png" alt="">
+                                    <span>6期免息</span>
+                                </div>
+                                <div class="msg text-center">
+                                    <p class="name">荣耀Play4 Pro 5G</p>
+                                    <p class="price">￥2699<del>￥2899</del></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fuild more-phone">
+                <a href="javascript:;">
+                    <span>发现更多手机<i class="fa fa-angle-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 蒙版 -->
+    <div class="container-fuild mb"></div>
+    <footer>
+        <div class="container-fuild">
+            <ul class="footer-menu">
+                <li><a href="javascript:;"><img src="./images/shouye.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./images/fenlei.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./images/faxian.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./images/gouwuche.png" alt=""></a></li>
+                <li><a href="javascript:;"><img src="./images/wode.png" alt=""></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./js/flexible.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/lib/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

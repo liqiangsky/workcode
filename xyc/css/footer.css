@@ -1,0 +1,17 @@
+#footer {
+  position: fixed;
+  bottom: 0;
+  background: #274479;
+  width: 100%;
+  padding: 0.125rem 0;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#footer p {
+  margin: 0;
+  color: white;
+  font-size: 0.25rem;
+}

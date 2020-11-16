@@ -1,0 +1,39 @@
+<!--pages/citys/citys.wxml-->
+<open-data type="usercity"></open-data>
+<view class="localcity">当前城市：{{city}}</view>
+<!-- 字母选择区域 -->
+<view class="searchLetter">
+  <text wx:for="{{searchLetter}}" wx:key="zm" wx:for-item="zm" class="zm" bindtap="selectcity" data-zm="{{zm}}">{{zm}}</text>
+</view>
+<!-- 热门城市 -->
+<view class="hot-title">热门城市：</view>
+<view class="hotCitys">
+  <view wx:for="{{hotCity}}" data-city="{{hotcity}}" data-type="热门城市" wx:key='hotcity' wx:for-item="hotcity"
+    class="hot-city-item" bindtap="selectcity">{{hotcity}}</view>
+</view>
+<!-- 历史城市 -->
+<view class="his-title">历史城市：</view>
+<view class="historyCitys">
+  <view wx:for="{{historyCity}}" data-city="{{historycity}}" data-type="历史城市" wx:key="historycity"
+    wx:for-item="historycity" class="history-city-item" bindtap="selectcity">
+    {{historycity}}</view>
+</view>
+<!-- 城市列表 -->
+<view class="cityLists">
+  <view class="city-title">城市列表：</view>
+  <scroll-view scroll-y class="scroll" scroll-into-view="{{local}}">
+    <view wx:key="initial" wx:for="{{cityList}}" wx:for-item="cityList">
+      <view class="initial" id="{{cityList.initial}}">{{cityList.initial}}</view>
+      <view class="initial-citys">
+        <view wx:key="name" wx:for="{{cityList.cityInfo}}" data-city="{{cityInfo.city}}" data-type="城市列表"
+          wx:for-item="cityInfo" class="initial-city" bindtap="selectcity">{{cityInfo.city}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- <view class="cityLists" wx:key="initial" wx:for="{{cityList}}" wx:for-item="cityList">
+  <view class="initial">{{cityList.initial}}</view>
+  <view class="initial-citys">
+    <view wx:key="name" wx:for="{{cityList.cityInfo}}" data-city="{{cityInfo.city}}" data-type="城市列表" wx:for-item="cityInfo" class="initial-city" bindtap="selectcity">{{cityInfo.city}}</view>
+  </view>
+</view> -->

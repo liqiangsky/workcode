@@ -1,0 +1,351 @@
+@charset "utf-8";
+
+// 通用样式开始
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//中间导航栏通用样式*********
+#navigation {
+    overflow: auto;
+    font-size: .375rem
+        /* 6/16 */
+    ;
+    color: #9a9a9a;
+    background-color: white;
+    z-index: 90;
+    width: 100%;
+
+    .products,
+    .hardwares,
+    .solutions,
+    .informations {
+        padding-top: .375rem
+            /* 6/16 */
+        ;
+        width: 250%;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        line-height: 2;
+        padding-left: .3125rem
+            /* 5/16 */
+        ;
+        padding-right: .3125rem
+            /* 5/16 */
+        ;
+        border-bottom: .0625rem
+            /* 1/16 */
+            solid #d4d4d4;
+        margin: 0;
+        // position: relative;
+        background: white;
+
+        .active {
+            color: black;
+            font-size: .5rem
+                /* 8/16 */
+            ;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 25%
+                    /* 20/16 */
+                ;
+                height: .125rem
+                    /* 2/16 */
+                ;
+                background: #fa6400;
+                margin: 0 auto;
+                margin-bottom: -.0625rem
+                    /* 1/16 */
+                ;
+            }
+        }
+    }
+
+    .solutions,.informations {
+        width: 100%;
+    }
+    .hardwares{
+        width: 200%;
+    }
+
+}
+
+//菜单开始
+.kb {
+    height: 2.8rem;
+    position: relative;
+    z-index: 80;
+
+    .menu {
+        border-bottom: .0625rem
+            /* 1/16 */
+            solid #e3e3e3;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding-left: .9375rem
+            /* 15/16 */
+        ;
+        padding-right: 0;
+
+        p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        ul {
+            line-height: 2.5;
+            font-size: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: .5rem
+                /* 8/16 */
+            ;
+        }
+    }
+}
+
+//菜单结束
+//产品和硬件中间导航栏通用样式*********
+//尾部空白块*********************
+.dbkb {
+    width: 100%;
+    height: .9375rem
+        /* 15/16 */
+    ;
+}
+
+//尾部空白块*********************
+
+
+// 行业资讯新闻资讯样式************************
+// 行业资讯开始
+#industry-information,#information-list {
+    i {
+        margin-left: .125rem
+            /* 2/16 */
+        ;
+        font-size: .25rem
+            /* 4/16 */
+        ;
+    }
+
+    .container-fluid {
+        .text-center {
+            font-size: .375rem
+                /* 6/16 */
+            ;
+
+            a {
+                color: black;
+            }
+        }
+
+        margin-top: .3125rem
+        /* 5/16 */
+        ;
+
+        .txbox {
+            padding: .3125rem
+                /* 5/16 */
+            ;
+            border: .0625rem
+                /* 1/16 */
+                solid rgba(#d6d6d6, .3);
+            border-radius: .1875rem
+                /* 3/16 */
+            ;
+            margin-bottom: .3125rem
+                /* 5/16 */
+            ;
+            box-shadow: 0 .0625rem
+                /* 1/16 */
+                .125rem
+                /* 2/16 */
+                rgba(#b9b9b9, .2);
+
+            .neirong {
+                width: 60%;
+                float: left;
+                .zw {
+                    margin: .3125rem
+                        /* 5/16 */
+                        0;
+                }
+
+                .time {
+                    font-size: .125rem
+                        /* 2/16 */
+                    ;
+                }
+                margin-right:10% ;
+            }
+
+            h2 {
+                line-height: 1.5;
+                margin: 0;
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                font-weight: bold;
+            }
+
+            p {
+                margin: 0;
+                font-size: .25rem
+                    /* 4/16 */
+                ;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #bebebe;
+            }
+
+            img {
+                width: 30%;
+            }
+
+        }
+
+    }
+
+}
+
+// 行业资讯结束
+//**********************************************
+//代理合作加入我们样式**************************
+//代理合作开始
+#Cooperation,
+#Join-Us {
+    .ipt {
+        width: 100%;
+        // margin-bottom: 0.3rem;
+        ;
+        border: .0625rem
+            /* 1/16 */
+            solid #d4d4d4;
+        padding: .25rem /* 4/16 */
+            0.5rem;
+        border-radius: .1875rem
+            /* 3/16 */
+        ;
+        margin:.125rem /* 2/16 */ 0;
+        &::placeholder {
+            color: #d1d1d1;
+            font-size: .375rem /* 6/16 */;
+        }
+    }
+
+
+    .btn {
+        width: 100%;
+        background: #274479;
+        line-height: 1.5;
+        color: white;
+    }
+
+    .tip {
+        font-size: .25rem /* 4/16 */;
+        margin: .25rem /* 4/16 */ 0;
+    }
+}
+
+//代理合作结束
+// **************************************
+
+//公司信息联系我们开始***********************
+#Company-profile,
+#Contact-Us {
+    h3 {
+        font-size: .5rem
+            /* 8/16 */
+        ;
+    }
+
+    p {
+        color: #aaaaaa;
+        font-size: .375rem
+            /* 6/16 */
+        ;
+    }
+    margin-bottom: 10%;
+}
+
+//公司信息联系我们结束*********************
+
+//公司信息结束
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+.h3-general {
+    z-index: -1;
+    color: black;
+    font-weight: bold;
+    margin-top: .625rem
+        /* 10/16 */
+    ;
+    margin-bottom: 0;
+    position: relative;
+    display: block;
+    font-size: .5rem
+        /* 8/16 */
+    ;
+
+    &::after {
+        width: .9375rem
+            /* 15/16 */
+        ;
+        height: .1875rem
+            /* 3/16 */
+        ;
+        background: #fa6400;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+    }
+}
+
+.p-general {
+    // font-family: 黑体;
+    color: #a8a8a8;
+    font-size: .4rem;
+    line-height: 1.5;
+}
+
+//显示隐藏类名********************
+.active {
+    display: block;
+}
+
+.none {
+    display: none;
+}
+
+//显示隐藏类名********************
+input {
+    outline: none;
+    font-weight: normal;
+    font-size:.375rem /* 6/16 */;
+}
+
+button {
+    outline: none;
+    font-size: .375rem /* 6/16 */;
+}
+
+textarea {
+    outline: none;
+}
+
+//通用样式结束

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./js/vue.js"></script>
+    <script>
+        //[10,20,30,40,50],想要在索引1处，删除数量为2的元素，并追加新的元素200，300，400
+        var arr = [10, 20, 30, 40, 50];
+        arr.splice(1, 2, 200, 300, 400);
+        console.log("数组删除添加-----", arr);
+        //一个数组[10,20,30,10,10,10,40,50,20,20,40,20,10]，请使用至少三种方法去重，函数封装
+        //第一中ES5
+        var arr1 = [10, 20, 30, 10, 10, 10, 40, 50, 20, 20, 40, 20, 10];
+
+        function quchong1(arr1) {
+            for (var i = 0; i < arr1.length; i++) {
+                for (var j = i + 1; j < arr1.length; j++) {
+                    if (arr1[i] == arr1[j]) {
+                        arr1.splice(j, 1);
+                        j--;
+                    }
+                }
+            }
+            return arr1;
+        }
+        console.log("数组去重1--------", quchong1(arr1));
+        //第二种ES6 Set
+        var arr2 = [10, 20, 30, 10, 10, 10, 40, 50, 20, 20, 40, 20, 10];
+
+        function quchong2(arr2) {
+            return Array.from(new Set(arr2));
+        }
+        console.log("数组去重2--------", quchong2(arr2));
+        //第三种indexOf
+        var arr3 = [10, 20, 30, 10, 10, 10, 40, 50, 20, 20, 40, 20, 10];
+
+        function quchong3(arr3) {
+            var Array = [];
+            for (var i = 0; i < arr3.length; i++) {
+                if (Array.indexOf(arr3[i]) == -1) {
+                    Array.push(arr3[i]);
+                }
+            }
+            return Array;
+        }
+        console.log("数组去重3--------", quchong3(arr3));
+        //第四种includes()
+        var arr5 = [10, 20, 30, 10, 10, 10, 40, 50, 20, 20, 40, 20, 10];
+
+        function quchong4(arr5) {
+            var newArr = [];
+            for (var i = 0; i < arr5.length; i++) {
+                if (!newArr.includes(arr5[i])) {
+                    newArr.push(arr5[i]);
+                }
+            }
+            return newArr;
+        }
+        console.log("数组去重4--------", quchong4(arr5));
+        //一个数组[20,10,15,30,25,100]，请在不使用sort的情况下，将其从大到小进行排序
+        var arr4 = [20, 10, 15, 30, 25, 100];
+        var max;
+
+        function paixu(arr4) {
+            for (var i = 0; i < arr4.length - 1; i++) {
+                for (var j = i + 1; j < arr4.length; j++) {
+                    if (arr4[i] < arr4[j]) {
+                        max = arr4[j];
+                        arr4[j] = arr4[i];
+                        arr4[i] = max;
+                    }
+                }
+            }
+            return arr4;
+        }
+        console.log("数组从大到小排序-", paixu(arr4));
+        //一个字符串"Hello"，请反转后输出“olleH"且不可以使用数组的reverse方法
+        var str = "Hello";
+        function zfc1(str) {
+            str = str.split('');
+            console.log(str)
+            var temp;
+            for (var i = 0; i < str.length / 2; i++) {
+                temp = str[i];
+                str[i] = str[str.length - 1 - i];
+                str[str.length - 1 - i] = temp;
+            }
+            return str.join('');
+        }
+        console.log("1倒叙的字符串为：", zfc1(str));
+
+        function zfc2(str) {
+            var newstr = "";
+            for (var i = str.length - 1; i >= 0; i--) {
+                newstr += str.charAt(i);
+            }
+            return newstr;
+        }
+        console.log("2倒叙的字符串为：", zfc2(str));
+
+
+        //过滤出名字是两个字的，["胡歌";"赵丽颖; "白宇""王俊凯"]，最终输出结果为:['胡歌','白宇]
+        var nameArr = ["胡歌", "赵丽颖", "白宇", "王俊凯"];
+
+        function twoName(nameArr) {
+            var newArr = [];
+            for (var i = 0; i < nameArr.length; i++) {
+                if (nameArr[i].length == 2) {
+                    newArr.push(nameArr[i]);
+                }
+            }
+            return newArr;
+        }
+        console.log("名字为两个字的为：", twoName(nameArr));
+        //过滤出名字是叠字的:['范冰冰',杨幂',杨洋',，刘诗诗',杨坤','高圆圆'”]
+        var nameArr1 = ['范冰冰', '杨幂', '杨洋', '刘诗诗', '杨坤', '高圆圆'];
+        function doubleName(nameArr) {
+            var newArr = [];
+            for (var i = 0; i < nameArr.length; i++) {
+                if(nameArr[i].charAt(nameArr[i].length-1) == nameArr[i].charAt(nameArr[i].length-2)){
+                    newArr.push(nameArr[i]);
+                }
+            }
+            return newArr;
+        }
+        console.log("名字有叠词的为：",doubleName(nameArr1));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+<!--pages/compass/compass.wxml-->
+<view class="title">{{direction}}</view>
+<image class="compass" src="../../images/compass.png" style="transform:rotate({{-deg}}deg)" />

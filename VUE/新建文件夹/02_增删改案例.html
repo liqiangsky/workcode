@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      [v-cloak] {
+        display: none;
+      }
+
+      table {
+        width: 500px;
+        text-align: center;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 6px 0;
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <pre>
+        <deL>1. 判断localstroge中是否有数据，有数据加载</deL>
+        <del>2. 输入编号和名称，点击提交按钮，将数据添加到表格中，如果编号和已有图书编号冲突，不能提交</del>
+        <del>3. 点击删除，可以移除当前图书信息</del>
+        <del>4. 点击修改，将当前图书信息回显到对应的输入框中；修改数据后，点击提交，将修改的数据提交到当前修改行中，编号不可修改</del>
+        <del>5. 随着图书的添加和移除，图书总数相应的发生改变 利用Vue中的计算属性</del>
+        <del>6. 当编号和名称没有输入任何内容时 或 图书名称与已有图书冲突，提交按钮禁用</del>
+        <del>7. 整个过程，不管是删除、修改、添加都会触发localstorage的更新</del>
+        9. 查询、排序、全选删除等等自己补充
+    </pre>
+    <div id="app" v-cloak>
+      <header>
+        <label
+          >编号：<input type="text" v-model="bid" :disabled="status == 1"
+        /></label>
+        <label>名称：<input type="text" v-model="bname" /></label>
+        <button @click="submit" :disabled="bid == '' || bname == '' || flag">
+          提交
+        </button>
+      </header>
+      <p>图书总数：<strong>{{ count }}</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 数组中的每一个对象元素对应于页面上每一行的图书信息 -->
+          <!-- 这里使用 v-for 遍历数组 -->
+          <tr :key="book.bid" v-for="book in books">
+            <td>{{ book.bid }}</td>
+            <td>{{ book.bname }}</td>
+            <td>{{ book.bdate }}</td>
+            <td>
+              <a href="javascript:;" @click="remove(book.bid)">删除</a>
+              <a href="javascript:;" @click="update(book.bid)">修改</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="./formatDate.js"></script>
+    <script src="./vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          bid: "",
+          bname: "",
+          books: [],
+          // status:false
+          status: 0,
+          state: 0,
+          flag:false
+        },
+        methods: {
+          submit() {
+            if (this.state == 0) {
+              //默认0为添加
+              console.log("添加...");
+              //添加
+              //备份this
+              let that = this;
+              //some() ES5中方法  只要有一个符合条件即返回true
+              let isId = this.books.some(function (val) {
+                //   console.log(val.bid,that.bid)
+                return val.bid == that.bid;
+              });
+              //   console.log(isId)
+
+              if (isId) {
+                //返回true，证明id冲突
+                alert("id冲突...");
+                return;
+              }
+
+              //定义对象，存储用户输入的图书信息
+              let obj = {
+                bid: this.bid,
+                bname: this.bname,
+                bdate: formatDate(new Date()),
+              };
+              //将接收的图书信息 添加到数组中
+              this.books.push(obj);
+            } else if (this.state == 1) {
+              //state == 1 确认修改
+              console.log("修改...");
+
+              let editIdx = this.books.findIndex((val) => {
+                return val.bid == this.bid;
+              });
+              console.log(editIdx);
+
+              //修改数组中对应索引的图书名字和时间
+              this.books[editIdx] = {
+                bid: this.bid,
+                bname: this.bname,
+                bdate: formatDate(new Date()),
+              };
+
+              //修改完成 改变提交按钮状态为添加功能
+              this.state = 0;
+              //编号状态禁用解除
+              this.status = 0;
+            }
+
+            //更新localstroge
+            localStorage.bookInfo = JSON.stringify(this.books);
+            //清空输入框
+            this.clear();
+          },
+          remove(bid) {
+            // console.log(bid);
+            //ES6方法  findIndex 获取符合条件的索引
+            let delIdx = this.books.findIndex(function (val) {
+              return val.bid == bid;
+            });
+            console.log(
+              "删除编号",
+              bid,
+              "对应的图书所在数组中的索引：",
+              delIdx
+            );
+            //splice()方法移除指定图书对象  通过id识别
+            this.books.splice(delIdx, 1);
+            //更新localstroge
+            localStorage.bookInfo = JSON.stringify(this.books);
+          },
+          update(bid) {
+            //通过bid的比对，拿到当前点击的图书对象的索引
+            let editIdx = this.books.findIndex(function (val) {
+              return val.bid == bid;
+            });
+            console.log(editIdx);
+            //数据回显
+            this.bid = this.books[editIdx].bid;
+            this.bname = this.books[editIdx].bname;
+            // 编号禁用或者只读
+            // this.status = true;
+            this.status = 1;
+            //改变提交按钮为修改状态
+            this.state = 1;
+          },
+          clear() {
+            this.bid = this.bname = "";
+          },
+        },
+        //mounted 挂载完成，去请求数据
+        mounted() {
+          //备份this，普通的回调函数中this指向window
+          let _this = this;
+          //利用延时器 模拟请求过程
+          setTimeout(function () {
+            if (!localStorage.bookInfo) return; //如果没有数据，直接退出
+            // console.log(JSON.parse(localStorage.bookInfo));
+            //请求数据，执行逻辑代码
+            _this.books = JSON.parse(localStorage.bookInfo);
+            // console.log(_this)
+          }, 2000);
+        },
+        //侦听器  监测名称是否冲突
+        watch: {
+          //val 改变之后的值
+          bname(val){
+            this.flag = this.books.some(function(value){
+              return value.bname == val;
+            })
+          }
+        },
+        //计算属性
+        computed: {
+          count(){
+            return this.books.length;
+          }
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人员名单</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="div">
+        <span>添加：</span>
+        <input type="text" class="ipt" placeholder="姓名" id="name">
+        <input type="text" class="ipt" placeholder="年龄" id="age">
+        <button class="btn" id="add">添加</button>
+        <button class="btn change" id="change">确定修改</button>
+        <span>变色：</span>
+        <button class="btn" id="kqcolor">开启移入变色</button>
+        <button class="btn gb" id="gbcolor">关闭移入变色</button>
+        <table id="tab">
+            <thead>
+                <td>ID</td>
+                <td>姓名</td>
+                <td>年龄</td>
+                <td>操作</td>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <span>搜索：</span>
+        <input type="text" class="ipt" id="searchipt">
+        <button class="btn" id="search">搜索</button>
+        <button class="btn" type="reset" id="reset">重置</button>
+        <span>排序：</span>
+        <button class="btn" id="agepx">年龄从小排序</button>
+        <!-- <button class="btn" id="idpx">ID从小排序</button> -->
+        <button class="btn" id="delall">全部删除</button>
+    </div>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script src="../js/index.js"></script>
+    <!-- <script>
+        $(this).mouseout
+    </script> -->
+</body>
+
+</html>

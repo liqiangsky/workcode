@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body,
+        #app,
+        #app>div {
+            height: 100%;
+        }
+
+        .cms-header,
+        .cms-footer {
+            width: 100%;
+            height: 60px;
+            color: #fff;
+            line-height: 60px;
+            text-align: center;
+            background-color: rgb(22, 177, 216);
+        }
+
+        .cms-section {
+            width: 100%;
+            height: calc(100% - 120px);
+            display: flex;
+        }
+
+        .left {
+            width: 300px;
+            background-color: rgb(22, 177, 216);
+        }
+
+        .left-ul {
+            list-style: none;
+            text-align: center;
+            background-color: salmon;
+        }
+
+        .left-ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #fff;
+        }
+
+        .left-ul a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .right {
+            flex: 1;
+            padding: 20px;
+            background-color: seagreen;
+        }
+
+        tr,
+        th,
+        td {
+            padding: 10px 0;
+            border: 2px solid black;
+        }
+
+        table {
+            width: 100%;
+            color: white;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        a {
+            color: rgb(243, 210, 23);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <router-view />
+    </div>
+    <script>
+        const ob = new Vue();
+        const Header = {
+            template: `<div><h2>cms后台管理系统</h2></div>`
+        }
+        const Section = {
+            template: `<div>
+                <div class='left'>
+                    <ul class='left-ul'>
+                        <li><router-link to='/user'>用户管理</router-link></li>
+                        <li><router-link to='/permission'>权限管理</router-link></li>
+                        <li><router-link to='/goods'>商品管理</router-link></li>
+                        <li><router-link to='/order'>订单管理</router-link></li>
+                        <li><router-link to='/system'>系统管理</router-link></li>
+                    </ul>
+                </div>
+                <div class='right'>
+                    <router-view/>
+                </div>
+            </div>`
+        }
+        const Footer = {
+            template: `<div><p>版权所有&copy;请勿盗用！！！！</p></div>`
+        }
+        const User = {
+            props: ['id'],
+            data() {
+                return {
+                    users: [{
+                        id: 1,
+                        name: 'jack',
+                        age: 18
+                    }, {
+                        id: 2,
+                        name: 'lucy',
+                        age: 30
+                    }, {
+                        id: 3,
+                        name: 'dava',
+                        age: 23
+                    }, {
+                        id: 4,
+                        name: 'tom',
+                        age: 24
+                    }],
+                    bb: ''
+                }
+            },
+            template: `<div>
+                <table>
+                    <tr>
+                        <th>编号</th>
+                        <th>姓名</th>
+                        <th>年龄</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr :key='user.id' v-for='user in users'>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.age }}</td>
+                        <td><a href='javascript:;' @click='abc(user.id)'>详情</a></td>
+                    </tr>
+                </table>
+            </div>`,
+            methods: {
+                abc(id) {
+                    this.$router.push('/user/detail/' + id);
+                }
+            }
+        }
+        const Permission = {
+            template: `<div>Permission</div>`
+        }
+        const Goods = {
+            template: `<div>Goods</div>`
+        }
+        const Order = {
+            template: `<div>Order</div>`
+        }
+        const System = {
+            template: `<div>System</div>`
+        }
+        const Detail = {
+            props: ['id'],
+            template: `<div>
+                用户id：{{ id }}
+                <button @click='goback()'>返回</button>
+            </div>`,
+            methods: {
+                goback() {
+                    this.$router.go(-1)
+                }
+            },
+        }
+        const Home = {
+            template: `<div>
+                <Header class='cms-header'></Header>
+                <Section class='cms-section'></Section>
+                <Footer class='cms-footer'></Footer>
+            </div>`,
+            components: {
+                Header,
+                Section,
+                Footer,
+            }
+        }
+        const routes = [{
+            path: '/',
+            component: Home,
+            redirect: '/user',
+            children: [{
+                    path: '/user',
+                    component: User,
+                },
+                {
+                    path: '/user/detail/:id',
+                    component: Detail,
+                    props: true
+                },
+                {
+                    path: '/permission',
+                    component: Permission
+                },
+                {
+                    path: '/goods',
+                    component: Goods
+                },
+                {
+                    path: '/order',
+                    component: Order
+                },
+                {
+                    path: '/system',
+                    component: System
+                }
+            ]
+        }]
+        const router = new VueRouter({
+            routes
+        });
+        new Vue({
+            el: '#app',
+            router
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "zj":"../../components/zj/zj"
+  },
+  "navigationBarBackgroundColor":"#0ff035"
+}

@@ -1,0 +1,74 @@
+/* pages/orderinfo/orderinfo.wxss */
+page {
+  background-color: #e3e3e3;
+}
+
+/* 联系地址 */
+.message {
+  width: 670rpx;
+  height: 300rpx;
+  margin: 20rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.selectedLocal {
+  display: flex;
+  align-items: center;
+}
+
+.loacltion {
+  margin: 0;
+  padding: 0 20rpx;
+  font-size: 14px !important;
+  font-weight: unset;
+}
+
+/* 已选商品 */
+.productinfo {
+  width: 670rpx;
+  margin: 20rpx;
+  padding: 20rpx;
+  background-color: #fff;
+}
+
+.productinfo-title {
+  border-bottom: 1px solid;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.orderinfo-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.orderinfo-img {
+  width: 160rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.orderinfo-config {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  right: 0;
+}
+
+.orderinfo-num,
+.orderinfo-price {
+  padding: 0 10rpx;
+  font-size: 14px;
+}
+
+.submit{
+  color:#fff;
+  background-color: #FF2D4A;
+}

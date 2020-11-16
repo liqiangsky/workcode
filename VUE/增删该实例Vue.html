@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            /* width: 400px; */
+            border-collapse: collapse;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        tr,
+        td,
+        th {
+            padding: 5px 10px;
+            border: 1px solid black;
+            max-width: 200px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .isRed {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <label>
+            编号：<input type="text" v-model="id" :disabled="idStatus">
+            名称：<input type="text" v-model="name">
+            <button @click="submit" :disabled="this.id == '' || this.name == '' || isSubmit">提交</button>
+            <span>{{ msg }}</span>
+        </label>
+        <table>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr :key="book.id" :class="{isRed:book.id == isRed}" v-for="(book,index) in books">
+                    <td>{{ book.id }}</td>
+                    <td :title="book.name">{{ book.name }}</td>
+                    <td>{{ book.date }}</td>
+                    <td>
+                        <a href="javascript:;" @click="updata(index)">修改</a>
+                        <a href="javascript:;" @click="delect(index)">删除</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>图书总数为：{{ books.length }}</p>
+    </div>
+    <script src="./js/data.js"></script>
+    <script src="./js/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                id: '',
+                name: '',
+                date: dateFormat("YYYY-mm-dd HH:MM", new Date()),
+                books: [],
+                status: 0,
+                idStatus: false,
+                isRed: '',
+                msg: '',
+                isSubmit:false
+            },
+            methods: {
+                submit() {
+                    if (this.status == 0) {
+                        let isId = this.books.some(val => {
+                            return this.id == val.id;
+                        });
+                        let isName = this.books.some(val => {
+                            return this.name == val.name;
+                        })
+                        // console.log(isName)
+                        if (isId) {
+                            alert("此id已存在，请更换id后添加！");
+                            return;
+                        }
+                        // if(isName == 'true'){
+                        //     this.isSubmit = true;
+                        // }
+                        let book = {
+                            id: this.id,
+                            name: this.name,
+                            date: this.date
+                        };
+                        this.books.push(book);
+                    } else if (this.status == 1) {
+                        // console.log(index)
+                        // console.log("xiuag")
+                        let index = this.books.findIndex(item => {
+                            // console.log(item);
+                            return this.id == item.id;
+                        });
+                        this.books[index].name = this.name;
+                        this.books[index].date = this.date;
+                        this.idStatus = false;
+                        this.status = 0;
+                        // this.isRed = true;
+                        this.isRed = this.books[index].id;
+                        console.log(this.isRed)
+                    }
+                    localStorage.msg = JSON.stringify(this.books);
+                    this.clear();
+                },
+                updata(index) {
+                    this.status = 1;
+                    this.idStatus = true;
+                    this.id = this.books[index].id;
+                    this.name = this.books[index].name;
+                },
+                clear() {
+                    this.id = this.name = '';
+                },
+                delect(index) {
+                    console.log(index);
+                    this.books.splice(index, 1);
+                    localStorage.msg = JSON.stringify(this.books);
+                }
+            },
+            mounted() {
+                let str = '正在加载中';
+                // let str = '正在验证中...';
+                let index = 0
+                let timer = setInterval(() => {
+                    this.msg = str.substring(0, index);
+                    index = index++ == str.length - 1 ? 0 : index;
+                }, 200);
+                // if () {
+                //     this.isSubmit = true;
+                //     // console.log(111)
+                // }
+                setTimeout(() => {
+                    clearInterval(timer);
+                    this.msg = '';
+                    if (!localStorage.msg) return;
+                    this.books = JSON.parse(localStorage.msg);
+                }, 2000);
+            },
+            watch:{
+                name(val){
+                    this.isSubmit = this.books.some(value => {
+                        return val == value.name;
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

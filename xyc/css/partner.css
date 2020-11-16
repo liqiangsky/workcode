@@ -1,0 +1,154 @@
+#header {
+  background: white;
+  color: black;
+  border-bottom: 0.0625rem solid #e3e3e3;
+}
+
+#header a {
+  color: black;
+}
+
+#header .right {
+  color: #214280;
+}
+
+#partner {
+  color: white;
+  position: relative;
+}
+
+#partner .menu {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  top: 1.5rem;
+  padding-left: 0.9375rem;
+  padding-right: 0;
+  background: white;
+}
+
+#partner .menu p {
+  margin: 0;
+  font-weight: bold;
+  color: black;
+}
+
+#partner .menu ul {
+  position: relative;
+  line-height: 2.5;
+  font-size: 0.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#partner .cp {
+  padding: 0;
+  display: none;
+  height: 375.2px;
+  position: relative;
+}
+
+#partner .cp img {
+  width: 100%;
+  height: 100%;
+}
+
+#partner .cp .container-fluid {
+  padding: 0 0.625rem;
+  position: absolute;
+  bottom: 0.625rem;
+}
+
+#partner .cp .container-fluid h2 {
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+#partner .cp .container-fluid p {
+  font-size: 0.375rem;
+  font-weight: bold;
+}
+
+#partner .active {
+  display: block;
+}
+
+#partner-list .list {
+  padding: 0;
+}
+
+#partner-list .list .Industrial-Advantage .text-center {
+  padding: 0;
+}
+
+#partner-list .list .Enterprise-Advantage .container-fluid {
+  padding: 0;
+}
+
+#partner-list .list .Enterprise-Advantage .container-fluid h3 {
+  font-size: .4rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+
+#partner-list .list .Enterprise-Advantage h2 {
+  text-align: left;
+  font-size: 0.375rem;
+}
+
+#partner-list .list .Enterprise-Advantage span {
+  text-align: left;
+  color: #aaaaaa;
+  line-height: 1.5;
+}
+
+#partner-list .list .Cooperation-Advantage ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 0.625rem;
+}
+
+#partner-list .list .Cooperation-Advantage ul li {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+
+#partner-list .list .Cooperation-Advantage ul li img {
+  width: 25%;
+  margin: 0 auto;
+}
+
+#partner-list .list .Cooperation-Advantage ul li h4 {
+  line-height: 1.5;
+  font-size: 0.375rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+#partner-list img {
+  width: 50%;
+}
+
+#partner-list .neirong {
+  margin-bottom: 0.625rem;
+  font-size: 0.375rem;
+  line-height: 1.5;
+}
+
+#partner-list .neirong span {
+  color: #999;
+}
+
+#partner-list h4 {
+  line-height: 1.5;
+  font-size: 0.375rem;
+  font-weight: bold;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}

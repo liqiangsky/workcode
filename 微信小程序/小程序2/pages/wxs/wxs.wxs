@@ -1,0 +1,12 @@
+var stuInfo = [
+  {id:1,name:'jack',age:18,hobby:"篮球"},
+  {id:2,name:'lucy',age:28,hobby:"唱歌"},
+  {id:3,name:'tom',age:16,hobby:"跑步"},
+  {id:4,name:'jerry',age:25,hobby:"跳远"}
+]
+var suttitle = "学生信息列表";
+
+module.exports = {
+  stutitle:suttitle,
+  stuInfo:stuInfo
+}

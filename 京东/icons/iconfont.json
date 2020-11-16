@@ -1,0 +1,44 @@
+{
+  "id": "2043206",
+  "name": "jd",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12309735",
+      "name": "chevron_left",
+      "font_class": "chevron_left",
+      "unicode": "e7fe",
+      "unicode_decimal": 59390
+    },
+    {
+      "icon_id": "12309743",
+      "name": "chevron_right",
+      "font_class": "chevron_right",
+      "unicode": "e800",
+      "unicode_decimal": 59392
+    },
+    {
+      "icon_id": "12309702",
+      "name": "cart",
+      "font_class": "cart",
+      "unicode": "e7f5",
+      "unicode_decimal": 59381
+    },
+    {
+      "icon_id": "12309669",
+      "name": "camera",
+      "font_class": "camera",
+      "unicode": "e7eb",
+      "unicode_decimal": 59371
+    },
+    {
+      "icon_id": "12310351",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e893",
+      "unicode_decimal": 59539
+    }
+  ]
+}

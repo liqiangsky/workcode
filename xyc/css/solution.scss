@@ -1,0 +1,268 @@
+//header开始
+#header {
+    background: white;
+    color: black;
+
+    a {
+        color: black;
+    }
+
+    .right {
+        color: #214280;
+    }
+
+    border-bottom: .0625rem
+    /* 1/16 */
+    solid #e3e3e3;
+}
+
+//header结束
+//解决方案列表大图开始
+#solution {
+    color: white;
+    position: relative;
+
+    .cp {
+        padding: 0;
+        display: none;
+        height: 375.2px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        position: relative;
+
+        .container-fluid {
+            padding: 0 .625rem
+                /* 10/16 */
+            ;
+
+            h2 {
+                font-weight: bold;
+                font-size: .75rem
+                    /* 12/16 */
+                ;
+            }
+
+            p {
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                font-weight: bold;
+            }
+
+            position: absolute;
+            bottom:.625rem
+            /* 10/16 */
+            ;
+        }
+    }
+
+    .active {
+        display: block;
+    }
+}
+
+//解决方案列表大图结束
+
+//产品列表开始
+#solution-list {
+    .list {
+        padding: 0;
+        display: none;
+
+        img {
+            width: 50%;
+        }
+    }
+
+    .active {
+        display: block;
+    }
+
+    .Current-Situation {
+
+        .cj {
+            padding: 0;
+
+            img {
+                width: 15%;
+            }
+
+            span {
+                // margin: 0;
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                font-weight: bold;
+            }
+
+            margin-bottom: .625rem
+            /* 10/16 */
+            ;
+
+            .neirong {
+                color: #999;
+                margin-bottom: .3125rem
+                    /* 5/16 */
+                ;
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                line-height: 1.5;
+                margin-top: .3125rem
+                    /* 5/16 */
+                ;
+            }
+        }
+    }
+
+    .Solution {
+        .container-fluid {
+            padding: 0;
+
+            h3 {
+                font-size: .5rem
+                    /* 8/16 */
+                ;
+                font-weight: bold;
+            }
+        }
+
+
+        h2 {
+            text-align: left;
+            font-size: .375rem
+                /* 6/16 */
+            ;
+        }
+
+        span {
+            text-align: left;
+            color: #aaaaaa;
+            line-height: 1.5;
+        }
+    }
+
+    .HardWare {
+
+        .container-fluid {
+            // background: yellow;
+            overflow: hidden;
+
+            padding: 0;
+            margin-bottom: .3125rem
+                /* 5/16 */
+            ;
+
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: bottom;
+            }
+
+            h4 {
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                font-weight: bold;
+                // background: red;
+                line-height: 3;
+                margin: 0;
+                border-bottom: .0325rem solid #e3e3e3;
+                border-right: .0325rem solid #e3e3e3;
+                border-left: .0325rem solid #e3e3e3;
+                border-bottom-left-radius: .1875rem;
+                border-bottom-right-radius: .1875rem;
+            }
+        }
+
+
+    }
+
+    .Advantage {
+
+        // background: red;
+        .container-fluid {
+            position: relative;
+            // background: green;
+            border-radius: .1875rem
+                /* 3/16 */
+            ;
+            border: .0325rem
+                /* 1/16 */
+                solid #e3e3e3 ;
+            box-shadow:0 0 .3125rem /* 5/16 */ rgba($color:black, $alpha: .1);
+            padding: .3125rem
+                /* 5/16 */
+                .625rem
+                /* 10/16 */
+            ;
+            margin-bottom: .625rem
+                /* 10/16 */
+            ;
+
+            h3 {
+                font-size: .375rem /* 6/16 */;
+                font-weight: bold;
+                margin-top: .9375rem /* 15/16 */ ;
+                margin-bottom: .9375rem
+                    /* 15/16 */
+                ;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    display: block;
+                    content: "";
+                    width: 10%;
+                    height: .0625rem
+                        /* 1/16 */
+                    ;
+                    background: black;
+                    bottom: - .5rem
+                        /* 8/16 */
+                    ;
+                }
+
+            }
+
+            h2 {
+                font-size: .375rem
+                    /* 6/16 */
+                ;
+                text-align: left;
+                color: #aaaaaa;
+                line-height: 1.5;
+                margin-bottom:1.25rem /* 20/16 */;
+            }
+
+            .bgimg {
+                position: absolute;
+            }
+
+            .img1 {
+                left: 5%;
+                bottom: 0;
+                width: 30%;
+            }
+
+            .img2 {
+                width: 15%;
+                right: 8%;
+                top: 15%;
+            }
+
+            .img3 {
+                width: 15%;
+                top: 5%;
+                right: 5%;
+            }
+        }
+    }
+
+}
+
+//产品列表结束

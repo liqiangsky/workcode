@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            /* float: left; */
+            /* overflow:hidden; */
+            border: 5px solid red;
+        }
+
+        .top {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+            float: left;
+            border: 5px solid gray;
+        }
+
+        .bottom {
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+            overflow: hidden;
+            border: 5px solid blue;
+        }
+
+        .box2 {
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+        }
+
+        .box2 {
+            /* width: 10vw;
+            height: 10vw;
+            background: red; */
+
+            width: 10%;
+            padding-bottom: 10%;
+            /* 防止内容过多，撑开高度 */
+            height: 0;
+            background: red;
+        }
+
+        div h1 {
+            color: red;
+        }
+
+        h1 {
+            color: green;
+        }
+
+        #div .h1 {
+            color: blue;
+        }
+
+        div h1.h1 {
+            color: aqua;
+        }
+
+        .div h1.h1 {
+            color: gold;
+        }
+
+        #h1 {
+            color: silver;
+        }
+
+        div h1#h1 {
+            color: purple;
+        }
+
+        div .h1 {
+            color: gray;
+        }
+
+        .div .h1 {
+            color: black;
+        }
+
+        .img {
+            width: 100%;
+            height: 500px;
+            background-image: url('./img/1.jpg'), url('./img/2.jpg');
+            background-position: 0 0, 50px, 50px;
+            background-repeat: no-repeat;
+        }
+
+        .lefttop {
+            width: 0;
+            border: 20px solid red;
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            /* border-top-color: transparent; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="lefttop"></div>
+    <div id="div" class="div">
+        <h1 id="h1" class="h1">test</h1>
+    </div>
+    <!-- <div class="box">
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div> -->
+    <div class="box2">
+        <!-- <div class="zfx"></div> -->
+    </div>
+    <div class="img"></div>
+    <script type="module">
+        // function sayHi() {
+        //     return (() => 0)()
+        // }
+        // console.log(typeof sayHi())
+
+
+        // for (var i = 0; i < 3; i++) {
+        //     setTimeout(() => {
+        //         console.log(i)
+        //     }, 1);
+        // }
+        // for (let i = 0; i < 3; i++) {
+        //     setTimeout(() => {
+        //         console.log(i)
+        //     }, 1);
+        // }
+
+        const promise1 = Promise.resolve('First')
+        const promise2 = Promise.resolve('Second')
+        const promise3 = Promise.reject('Third')
+        const promise4 = Promise.resolve('Fourth')
+        const runPromises = async () => {
+            const res1 = await Promise.all([promise1,promise2])
+            const res2 = await Promise.all([promise3,promise4])
+            return [res1,res2]
+        }
+
+        runPromises().then(res => {
+            console.log(res,11111111111111111)
+        }).catch(err => {
+            console.log(err,22222222222222222)
+        })
+
+
+
+        
+
+        let a = {
+            b:(()=>{
+                return [0,1,2].map(el => {
+                    return {
+                        el//[0,1,4]
+                    }
+                }).some(el=>{
+                    // console.log(el,'el')
+                    // console.log(Object.keys(el)[0])
+                    console.log(!!el[Object.keys(el)[0]],el)
+                    return !!el[Object.keys(el)[0]]
+                })
+            })()
+        }
+        let b = Object.prototype.toString.call(a.b)
+        console.log(b)
+        // console.log(window)
+        // import abc from './bfc.js'
+        // var a = 1
+        // if(!(a in window)){
+        //     var c = 1
+        // }
+        // console.log(c)
+
+
+
+        // var a = false || 2
+        // var b = false && 2
+        // console.log(a)
+        // console.log(b)
+
+        // function fn(a){
+        //     console.log(a)
+        //     var a = 2
+        //     function a(){}
+        //     console.log(a)
+        // }
+        // fn(1)
+        // for(var i = 0,j=0;i<10,j<6;i++,j++){
+        //     var k = j+i
+        // }
+        // console.log(k)
+
+
+        // a()
+
+        // var x = "globol value";
+
+        // function getValue() {
+        //     console.log(x);
+        //     let x = "local value";
+        //     console.log(x);
+        // }
+        // getValue();
+
+
+
+        // var name = 'World';
+        // (function () {
+        //     console.log(this)
+        //     // var name 
+        //     // console.log(name)
+        //     if (typeof name === 'undefined') {
+        //         var name = 'Jack'
+        //         console.log('Goodbye' + name)
+        //     } else {
+        //         // var name = 'jack'
+        //         console.log('Hello' + name)
+        //     }
+        // })()
+
+        // function fn111() {
+        //     var age = 18;
+
+        //     function aaa() {
+        //         console.log(age)
+        //     }
+        //     aaa()
+        // }
+        // fn111()
+        // fn(function () {
+        //     console.log(age) // 此处会输出什么结果？
+        // })
+
+
+
+        // function bbb(){
+        //     var name
+        //     console.log(name)
+        //     var name = 1
+        // }
+        // bbb()
+        // console.log(name)
+
+
+        // console.log(abc)
+        // var a = 0;
+        // // foo();
+
+        // // function foo() {
+        // //     console.log(a);
+        // //     var a = b = 1;
+        // //     console.log(b);
+        // // }
+        // // console.log(a);
+        // // console.log(b);
+
+
+        // var person = {
+        //     name: 'John',
+        //     age: 18
+        // };
+
+        // function foo1(p) {
+        //     p.age = 19;
+        // }
+
+        // function foo2(p) {
+        //     p = {
+        //         age: 20
+        //     };
+        // }
+        // foo1(person);
+        // foo2(person);
+        // console.log(person);
+
+
+        // function fun(n, o) {
+        //     console.log(o);
+        //     return {
+        //         fun: function (m) {
+        //             return fun(m, n);
+        //         }
+        //     };
+        // }
+        // var a = fun(0);
+        // a.fun(1);
+        // a.fun(2);
+        // a.fun(3);
+        // var b = fun(0).fun(1).fun(2).fun(3);
+        // var c = fun(0).fun(1);
+        // c.fun(2);
+        // c.fun(3);
+
+
+        // var fn = 0
+        // // curry(fn)(1)(2)(3)=6
+        // function curry(fn) {
+        //     return function (n) {
+        //         return function (p) {
+        //             return function (q) {
+        //                 console.log(fn + n * p * q)
+        //             }
+        //         }
+        //     }
+        // }
+        // curry(fn)(1)(2)(3);
+        // (function (n) {
+        //     return console.log(++n + '1')
+        // })(1)
+        // // ['1','2','3'].map(parseInt)
+        // var Foo = function () {
+        //     this.name = 'wang'
+        // }
+        // var foo = new Foo()
+        // var bar = {}
+        // bar.name = foo.name
+        // bar.name = 'liu'
+        // console.log(foo.name)
+        // // alert (0 || 1)
+        // console.log(4 + 3 + 2 + '1')
+
+        // // function foo(a) {
+        // //     arguments[0] = 2
+        // //     console.log(a)
+        // // }
+        // // foo(1)
+
+        // var a = 888;
+        // ++a;
+        // console.log(a++)
+    </script>
+</body>
+
+</html>

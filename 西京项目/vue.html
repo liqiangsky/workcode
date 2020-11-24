@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app" ref="reference">{{value}}
+        <button type="submit" @click='get'>点击</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    value: 'Hello World ~'
+                };
+            },
+            created() {
+                console.log('created')
+                // console.log(this.$refs['reference']);
+            },
+            mounted() {
+                console.log('mounted')
+                // console.log(this.$refs.reference)
+            },
+            methods: {
+                get() {
+                    this.value = '你好啊';
+                    console.log(this.$refs['reference'].innerText);
+                    this.$nextTick(() => {
+                        console.log(this.$refs['reference'].innerText);
+                    });
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

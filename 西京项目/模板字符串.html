@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script>
+        const arr1 = [{ first: 'jack', second: 18 }, { first: 'lucy', second: 15 }]
+        const tmp = arr => `<table>
+            ${arr.map(item => `
+                <tr><td>${item.first}</td></tr>
+                <tr><td>${item.second}</td></tr>
+            `).join('').trim()}
+        </table>`
+        console.log(tmp(arr1))
+
+
+        const temp = `<ul>
+        <% for(let i = 0; i < 3 ; i++) {%>
+            <li><%= i %></li>
+        <%}%>
+        </ul>`
+        const arr = [1,2,3]
+        let template = `
+<ul>
+  <% for(let i=0; i < arr.length; i++) { %>
+    <li><%= arr[i] %></li>
+  <% } %>
+</ul>
+`;
+const body = document.getElementsByTagName('body')[0]
+console.log(body)
+body.append(temp)
+    </script>
+</body>
+
+</html>

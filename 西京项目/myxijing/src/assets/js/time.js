@@ -225,10 +225,10 @@ export default {
       },
 
       // 获取实时时间 年月日星期时分秒 例如：2019年2月26日 星期二 20:00:52
-      dayTime: function (id) {
-        var inn = document.getElementById(id)
+      // dayTime: function (id) {
+      dayTime: function () {
+        // var inn = document.getElementById(id)
         var date = new Date()
-
         var month = date.getMonth() + 1
         var year = date.getFullYear()
         var day = date.getDate()
@@ -269,9 +269,10 @@ export default {
             week1 = '星期六'
             break
         }
-        inn.innerHTML = year + '年' + month + '月' + day + '日   ' + week1 + '   ' + hour + ':' + min + ':' + sec
-        var innn = inn.innerHTML
-        setTimeout(time.dayTime(id), 1000)
+        // inn.innerHTML = year + '年' + month + '月' + day + '日   ' + week1 + '   ' + hour + ':' + min + ':' + sec
+        const res = year + '年' + month + '月' + day + '日   ' + week1 + '   ' + hour + ':' + min + ':' + sec
+        // console.log(res)
+        return res
       }
 
     }

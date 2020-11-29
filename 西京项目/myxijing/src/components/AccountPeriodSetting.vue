@@ -56,7 +56,7 @@
                   v-model="ruleForm.enddate"
                   placeholder="请选择结束交易日期"
                   style="width: 100%"
-                  :autofocus='autofocus'
+                  :autofocus="autofocus"
                   @focus="focus"
                 ></el-date-picker>
               </el-form-item>
@@ -140,12 +140,12 @@ export default {
   data() {
     //自定义校验规则
     const validate = (rule, value, callback) => {
-      console.log(value)
+      console.log(value);
       const days1 = Math.abs(getTime.getTime().days(this.ruleForm.startdate));
       console.log(days1, "day1");
       const days2 = Math.abs(getTime.getTime().days(this.ruleForm.enddate));
       console.log(days2, "day2");
-      if (value == "") {
+      if (value == "" || value == null) {
         callback(new Error("请输入结束日期比开始日期大"));
       } else {
         if (days1 > days2) {
@@ -157,7 +157,7 @@ export default {
       }
     };
     return {
-      autofocus:true,
+      autofocus: true,
       //抽屉
       drawer: false,
       //加载动画
@@ -234,9 +234,8 @@ export default {
   },
   mounted() {},
   methods: {
-    focus(){
-      this.autofocus = false
-      console.log('foucs')
+    focus() {
+      console.log("foucs");
     },
     //最新数据查询
     async account_set_Query() {
@@ -259,8 +258,6 @@ export default {
           item.index = (this.current - 1) * this.pagesize + index + 1;
           item.zqrq = item.start_date + " 至 " + item.end_date;
         });
-        // console.log(this.tableData, "111111111111111");
-        // console.log(this.tableData);
         this.total = result.data.TotalRecords;
         this.data = this.tableData;
         this.loading = false;
@@ -341,6 +338,7 @@ export default {
     add(ruleForm) {
       this.$refs[ruleForm].validate(async (valid) => {
         if (valid) {
+          console.log(this.ruleForm.enddate);
           console.log("success");
           const result = await axios.post("account_set/Add", {
             end_date: this.ruleForm.enddate,
@@ -374,7 +372,6 @@ export default {
       // this.data = this.tableData.slice(start, end);
       this.account_set_Query();
       this.month = "";
-
     },
     //切换页码
     handleCurrentChange(val) {

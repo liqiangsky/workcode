@@ -83,6 +83,7 @@
               multiple
               placeholder="请选择文章标签"
               v-model="residence.residence_name"
+              @change="abc"
             >
               <!-- <el-checkbox-group v-model="residence.residence_name"> -->
               <el-option
@@ -91,26 +92,28 @@
                 :label="item.residence_name"
                 :value="item.residence_name"
               >
-                <div style="display: inline-block" @click="clickCheckbox">
-                  <el-checkbox v-model="item.isCheck"></el-checkbox>
+                <div style="display: inline-block" @click.prevent="checked">
+                  <el-checkbox v-model="item.ischeck">{{
+                    item.residence_name
+                  }}</el-checkbox>
                 </div>
               </el-option>
-              <!-- </el-checkbox-group> -->
             </el-select>
           </el-form-item>
           <el-form-item
             label="管辖楼栋"
             v-show="residence.residence_name != ''"
           >
-            <el-checkbox-group v-model="residence.checked">
-              <el-checkbox
-                v-for="item in residence.buildingList"
-                :key="item.building_id"
-                :label="item.building_no"
-                :disabled="item.optional_state != 1"
-                >{{ item.building_no }}</el-checkbox
-              >
-            </el-checkbox-group>
+            <!-- <el-checkbox-group> -->
+            <el-checkbox
+              v-for="item in residence.buildingList"
+              :key="item.building_id"
+              :label="item.building_no"
+              v-model="item.ischeck"
+              :disabled="item.optional_state == 0"
+              >{{ item.building_no }}</el-checkbox
+            >
+            <!-- </el-checkbox-group> -->
           </el-form-item>
         </el-form>
       </el-drawer>
@@ -187,12 +190,14 @@ export default {
         residence_name: [],
         //管辖楼栋
         buildingList: [],
-        // 管辖选中
-        checked: [],
         //房管
         user_name: "",
         //select所有小区
         xiaoqu: [],
+        //所有楼栋
+        allBuildings: [],
+        ischeck: false,
+        row: "",
       },
       rules: {
         residence_name: [
@@ -233,24 +238,21 @@ export default {
     },
     //select编辑按钮
     async editrow(row) {
+      this.residence.row = row;
       this.residence.residence_name = [];
       //抽屉
       this.editdrawer = true;
       //房管员
       this.residence.user_name = row.user_name;
-      console.log(row);
       const result = await axios.post("residence_set/Detail", {
         user_id: row.user_id,
       });
-      console.log(result);
       //管辖小区
       this.residence.residence_name.push(
         result.data.ResultList[0].residenceList[0].residence_name
       );
       this.residence.buildingList =
         result.data.ResultList[0].residenceList[0].buildingList;
-      this.residence.checked.push(row.building_no);
-
       const res = await axios.post("residence_set/Query", {
         pageIndex: 0,
         pageSize: 0,
@@ -261,14 +263,90 @@ export default {
           },
         ],
       });
-      console.log(res);
       this.residence.xiaoqu = res.data.ResultList;
+      this.residence.xiaoqu.forEach((item) => {
+        item.ischeck = false;
+        this.residence.residence_name.forEach((el) => {
+          if (el == item.residence_name) {
+            item.ischeck = true;
+          }
+        });
+      });
+      this.residence.buildingList.forEach((item) => {
+        const res = row.building_no.split(",").indexOf(item.building_no);
+        // console.log(res);
+        if (res !== -1) {
+          // console.log(item);
+          item.ischeck = true;
+        }
+      });
+      const allBuildings = await axios.post("building_set/Query", {
+        pageIndex: 0,
+        pageSize: 0,
+        ilist: [
+          {
+            title: "string",
+            content: "string",
+          },
+        ],
+      });
+      // console.log(allBuildings);
+      if (allBuildings.status == 200 && allBuildings.data.Result == 1) {
+        this.residence.allBuildings = allBuildings.data.ResultList;
+        // console.log(this.residence.allBuildings)
+      }
     },
+    //新增
     newadd() {
       this.newdrawer = true;
       console.log(this.tableData);
       this.newresidence.user_name = this.tableData;
     },
+    //check阻止默认事件
+    checked() {
+      console.log("checked");
+    },
+    //select change事件
+    abc() {
+      // var arr = [];
+      // this.residence.residence_name = [];
+      this.residence.buildingList = [];
+      this.residence.allBuildings.forEach((item) => {
+        this.residence.residence_name.forEach((el) => {
+          const res = item.building_no.includes(el);
+          if (res) {
+            this.residence.buildingList.push(item);
+            // this.residence.buildingList.forEach((i) => {
+            //   this.residence.row.building_no.split(",").forEach((j) => {
+            //     if (j == i.building_no) {
+            //       i.ischeck = true;
+            //     }
+            //   });
+            // });
+
+            this.residence.buildingList.forEach((i) => {
+              const res = this.residence.row.building_no.split(",").indexOf(i.building_no);
+              // console.log(res);
+              if (res !== -1) {
+                // console.log(item);
+                item.ischeck = true;
+              }
+            });
+          }
+        });
+      });
+      // var a = this.residence.buildingList.concat(arr);
+      // console.log(a)
+      this.residence.xiaoqu.forEach((item) => {
+        const res = this.residence.residence_name.indexOf(item.residence_name);
+        if (res !== -1) {
+          item.ischeck = true;
+        } else {
+          item.ischeck = false;
+        }
+      });
+    },
+    //提交
     savenewresidence(newresidence) {
       this.$refs[newresidence].validate((valid) => {
         if (valid) {
@@ -279,24 +357,6 @@ export default {
         }
       });
     },
-    // async queryXiaoqu() {
-    //   // console.log(this.residence.residence_name);
-    //   // this.residence.xiaoqu = [];
-    //   const result = await axios.post("residence_set/Query", {
-    //     pageIndex: 0,
-    //     pageSize: 0,
-    //     ilist: [
-    //       {
-    //         title: "string",
-    //         content: "string",
-    //       },
-    //     ],
-    //   });
-    //   // console.log(result);
-    //   // const obj = {};
-    //   this.residence.xiaoqu = result.data.ResultList;
-    //   console.log(this.residence.xiaoqu);
-    // },
     //每页条数
     handleSizeChange(val) {
       this.pagesize = val;

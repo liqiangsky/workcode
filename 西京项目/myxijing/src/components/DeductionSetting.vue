@@ -237,7 +237,7 @@ export default {
         });
         console.log(result);
         this.reduction_name = "";
-        // this.reduction_set_Query();
+        this.reduction_set_Query();
         this.$message({
           message: "删除成功！",
           type: "success",

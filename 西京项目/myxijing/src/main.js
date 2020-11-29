@@ -12,13 +12,14 @@ import './assets/css/global.css'
 import './assets/fonts/iconfont.css'
 import './assets/css/system.css'
 
+
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.use(SIdentify) //验证码
 Vue.use(VueAxios, axios)
 // http://119.3.45.32:9010/swagger/index.html
 // "Content-Type": "application/json;charset=UTF-8",
-axios.defaults.baseURL = 'http://119.3.45.32:9010/api/'
+axios.defaults.baseURL = 'http://119.3.45.32:2304/api/'
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8'
 new Vue({
   router,

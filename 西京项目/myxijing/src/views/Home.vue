@@ -44,7 +44,7 @@
             :collapse="isCollapse"
             :collapse-transition="false"
             unique-opened
-            default-active="/home"
+            :default-active="index"
             background-color="#eee"
             class="el-menu-vertical-demo"
             router
@@ -182,6 +182,7 @@ import axios from "axios";
 import AccountPeriodSetting from "../components/AccountPeriodSetting";
 import CommunityMaintenance from "../components/CommunityMaintenance";
 import home from "../components/Home";
+import PowerList from "../components/PowerList";
 export default {
   data() {
     var validatePass = (rule, value, callback) => {
@@ -212,7 +213,9 @@ export default {
       loading: false,
       //用户名
       user_name: "",
+      //左侧折叠按钮
       isCollapse: false,
+      //头像
       circleUrl:
         "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
       data: [],
@@ -225,6 +228,7 @@ export default {
         newpass: "",
         checkPass: "",
       },
+      index: "",
       rules: {
         newpass: [
           {
@@ -244,10 +248,9 @@ export default {
     };
   },
   mounted() {
-    console.log(sessionStorage.token);
     this.user_name = JSON.parse(sessionStorage.data).user_name;
     this.data = JSON.parse(sessionStorage.data).menus;
-    // console.log(this.data);
+    this.index = window.location.hash.split("#")[1];
   },
   methods: {
     //用户信息切换
@@ -276,7 +279,7 @@ export default {
     //修改密码确认
     async Editpassword() {
       const result = await axios.post(
-        "http://119.3.104.39:2302/api/user_info/EditPassword",
+        "http://119.3.104.39:2303/api/user_info/EditPassword",
         {
           userName: this.user_name,
           oldPwd: this.password.oldpass,
@@ -416,8 +419,8 @@ export default {
   .el-menu-item:hover {
     background: #f3ffff !important;
   }
-  .el-menu-item.is-active{
-    background: #f3ffff !important;;
+  .el-menu-item.is-active {
+    background: #f3ffff !important;
   }
 }
 

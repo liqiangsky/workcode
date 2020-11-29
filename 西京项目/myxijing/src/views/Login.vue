@@ -149,6 +149,8 @@ export default {
             login_account: this.loginConfig.login_account,
             login_password: this.loginConfig.login_password,
           });
+          console.log(result);
+          sessionStorage.menus = JSON.stringify(result.data.ResultList[0].menus);
           if (result.data.Result == 1 && result.status == 200) {
             sessionStorage.token = result.data.ResultList[0].Token;
             // JSON.parse

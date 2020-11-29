@@ -7,6 +7,7 @@ import AccountPeriodSetting from '../components/AccountPeriodSetting'
 import CommunityMaintenance from '../components/CommunityMaintenance'
 import MonthPaymentStatistics from '../components/MonthPaymentStatistics'
 import DeductionSetting from '../components/DeductionSetting'
+import PowerList from '../components/PowerList'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,13 @@ const routes = [{
       component: home,
       meta: {
         title: '首页'
+      }
+    },
+    {
+      path: '/powerList',
+      component: PowerList,
+      meta: {
+        title: '角色管理'
       }
     }, {
       path: '/accountPeriodSetting',
@@ -70,7 +78,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // 判断该路由是否需要登录权限
   if (to.matched.some(record => record.meta.requireAuth)) {
-    if (!sessionStorage.getItem('token')) {
+    if (sessionStorage.getItem('token')) {
       Vue.axios.interceptors.request.use(
         config => {
           config.headers.token = sessionStorage.getItem('token') //设置响应头
@@ -97,7 +105,34 @@ router.beforeEach((to, from, next) => {
     return next()
   }
 });
-
+// 全局路由前置守卫
+// router.beforeEach((to, from, next) => {
+//   if (to.path == '/login') {
+//     //如果登录的是 login 页面，任何人都可以登录，放行
+//     return next()
+//   }
+//   if (sessionStorage.token) {
+//     //如果不是登录页面，判断sessionStorage中是否有token数据，如果有，放行
+//     // 其它操作，需要在请求头中设置 token 验证
+//     Vue.axios.interceptors.request.use(
+//       config => {
+//         config.headers.token = sessionStorage.getItem('token') //设置响应头
+//         return config
+//       },
+//       err => {
+//         console.log(err)
+//       }
+//     )
+//     /* 路由发生变化修改页面title */
+//     if (to.meta.title) {
+//       document.title = to.meta.title
+//     }
+//     return next()
+//   }
+//   return next({
+//     path: '/login'
+//   }) //如果不是登录页面，并且没有token值，就跳转到登录页
+// })
 
 
 
